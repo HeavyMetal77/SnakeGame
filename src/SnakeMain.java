@@ -4,6 +4,6 @@ public class SnakeMain {
     }
 
     public SnakeMain() {
-        SnakeFrame frame = new SnakeFrame();
+        SnakePanel frame = new SnakePanel();
     }
 }

@@ -1,29 +1,24 @@
 import javax.swing.*;
 import java.awt.*;
 
-public class SnakeFrame extends JFrame {
+public class SnakePanel extends JPanel {
     private final int WIDTH = 600;
-    private JPanel panel;
     private JMenuBar menuBar;
     private Color colorPanel = Color.yellow;
 
-    public SnakeFrame() throws HeadlessException {
-        setTitle("Snake");
-        setMinimumSize(new Dimension(WIDTH, WIDTH));
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        setLocationRelativeTo(null);
+    public SnakePanel() throws HeadlessException {
+        JFrame frame = new JFrame();
+        frame.setTitle("Snake");
+        frame.setMinimumSize(new Dimension(WIDTH, WIDTH));
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        frame.setLocationRelativeTo(null);
         initMenu();
-        initPanel();
-        getContentPane().add(panel);
-        setJMenuBar(menuBar);
-        setVisible(true);
-        pack();
+        setBackground(colorPanel);
+        frame.getContentPane().add(this);
+        frame.setJMenuBar(menuBar);
+        frame.setVisible(true);
+        frame.pack();
         repaint();
-    }
-
-    private void initPanel() {
-        panel = new JPanel();
-        panel.setBackground(colorPanel);
     }
 
     public void initMenu(){
