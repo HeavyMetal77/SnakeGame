@@ -4,6 +4,8 @@ public class SnakeMain {
     }
 
     public SnakeMain() {
-        SnakePanel frame = new SnakePanel();
+        SnakePanel snakePanel = new SnakePanel();
+        SnakeLogicGame logicGame = new SnakeLogicGame();
+        
     }
 }
