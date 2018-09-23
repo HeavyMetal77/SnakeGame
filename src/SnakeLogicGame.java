@@ -14,11 +14,11 @@ public class SnakeLogicGame {
     protected static boolean inGame = true;
     protected static int speedGame = 100;
     protected static ArrayList<Coord> snake;
-    protected static ArrayList<Coord> eatBlock;
+    protected static ArrayList<EatBlock> eatBlockColor;
 
     public SnakeLogicGame() {
         initSnake();
-        generateEatBlock(countEatBlock);
+        generateEatBlockColor(countEatBlock);
     }
 
     protected static void initSnake() {
@@ -29,13 +29,56 @@ public class SnakeLogicGame {
         }
     }
 
-    protected static void generateEatBlock(int countEatBlock) {
-        eatBlock = new ArrayList<>(countEatBlock);
+    protected void generateEatBlockColor(int countEatBlock) {
+        eatBlockColor = new ArrayList<>(countEatBlock);
         for (int i = 0; i < countEatBlock; i++) {
             int randomEatBlockX = new Random().nextInt(SnakePanel.WIDTH / sizeBlock);
             int randomEatBlockY = new Random().nextInt(SnakePanel.WIDTH  / sizeBlock);
-            eatBlock.add(new Coord(randomEatBlockX* sizeBlock, randomEatBlockY* sizeBlock));
+            Coord newCoord = new Coord(randomEatBlockX* sizeBlock, randomEatBlockY* sizeBlock);
+            Color colorBlock = colorSnakeBlock();
+            eatBlockColor.add(new EatBlock(colorBlock, newCoord));
         }
+    }
+
+    protected static Color colorSnakeBlock () {
+        Color colorRandom;
+        Random random = new Random();
+        int randomValue = random.nextInt(10);
+        switch (randomValue) {
+            case 0:
+                colorRandom = Color.BLUE;
+                break;
+            case 1:
+                colorRandom = Color.RED;
+                break;
+            case 2:
+                colorRandom = Color.GREEN;
+                break;
+            case 3:
+                colorRandom = Color.CYAN;
+                break;
+            case 4:
+                colorRandom = Color.BLACK;
+                break;
+            case 5:
+                colorRandom = Color.PINK;
+                break;
+            case 6:
+                colorRandom = Color.MAGENTA;
+                break;
+            case 7:
+                colorRandom = Color.ORANGE;
+                break;
+            case 8:
+                colorRandom = Color.DARK_GRAY;
+                break;
+            case 9:
+                colorRandom = Color.WHITE;
+                break;
+            default:
+                colorRandom = Color.RED;
+        }
+        return colorRandom;
     }
 
     protected static void moveSnake(ArrayList<Coord> snake) {
@@ -76,22 +119,18 @@ public class SnakeLogicGame {
             }
         }
         for (int i = 0; i < countEatBlock; i++) {
-            if(snake.get(0).equals(eatBlock.get(i))){
-                System.out.println(snake.get(0) + " " + eatBlock.get(i));
-                Coord coord = eatBlock.get(i);
+            if(snake.get(0).equals(eatBlockColor.get(i).coord)){
+                System.out.println(snake.get(0) + " " + eatBlockColor.get(i).coord);
+                Coord coord = eatBlockColor.get(i).getCoord();
                 snake.add(coord);
                 SnakePanel.labelStatus.setText("Score: " + (++score));
-                eatBlock.remove(i);
-                SnakePanel.colorEatBlock = SnakePanel.colorSnakeBlock();
+                eatBlockColor.remove(i);
                 int randomEatBlockX = new Random().nextInt(SnakePanel.WIDTH / sizeBlock);
                 int randomEatBlockY = new Random().nextInt(SnakePanel.WIDTH  / sizeBlock);
-                eatBlock.add(i, new Coord(randomEatBlockX*sizeBlock, randomEatBlockY*sizeBlock));
-                System.out.println(snake.size() + " " + eatBlock.size() + SnakePanel.colorEatBlock);
+                Color temp = colorSnakeBlock();
+                eatBlockColor.add(i, new EatBlock(temp, new Coord(randomEatBlockX*sizeBlock, randomEatBlockY*sizeBlock)));
+                System.out.println(snake.size() + " " + eatBlockColor.size() + eatBlockColor.get(i).getColorEatBlock());
             }
         }
-
     }
-
-
-
 }

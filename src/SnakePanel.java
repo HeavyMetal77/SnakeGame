@@ -10,15 +10,17 @@ public class SnakePanel extends JPanel implements ActionListener {
     protected Color colorPanel = Color.yellow;
     protected static Timer timer;
     protected static Color colorSnake = Color.BLACK;
-    protected static Color colorEatBlock = Color.RED;
     protected static JLabel labelStatus;
     protected JFrame frame;
+    protected JButton buttonPause;
+    protected JButton buttonResume;
+    protected JButton buttonNewGame;
 
     public SnakePanel() throws HeadlessException {
         frame = new JFrame();
         frame.setTitle("Snake");
-        frame.setMinimumSize(new Dimension(600, 685));
-        frame.add(this, BorderLayout.WEST);
+        frame.setMinimumSize(new Dimension(600, 735));
+        frame.add(this, BorderLayout.CENTER);
         setPreferredSize(new Dimension(WIDTH, WIDTH));
         setMinimumSize(new Dimension(WIDTH, WIDTH));
         setMaximumSize(new Dimension(WIDTH, WIDTH));
@@ -54,8 +56,8 @@ public class SnakePanel extends JPanel implements ActionListener {
         JMenuItem menuItemSaveGame = new JMenuItem("Save Game");
         JMenuItem menuItemPauseGame = new JMenuItem("Pause Game");
         JMenuItem menuItemResumeGame = new JMenuItem("Resume Game");
-
-
+        JSeparator separator = new JSeparator();
+        JMenuItem menuItemExitGame = new JMenuItem("Exit Game");
 
         JMenuItem menuItemConfigStartGame = new JMenuItem("ConfigStartGame");
         JMenuItem menuItemSkin = new JMenuItem("Skin");
@@ -64,10 +66,40 @@ public class SnakePanel extends JPanel implements ActionListener {
         menuGame.add(menuItemSaveGame);
         menuGame.add(menuItemPauseGame);
         menuGame.add(menuItemResumeGame);
+        menuGame.add(separator);
+        menuGame.add(menuItemExitGame);
         menuSettings.add(menuItemConfigStartGame);
         menuSettings.add(menuItemSkin);
         menuBar.add(menuGame);
         menuBar.add(menuSettings);
+
+        buttonNewGame = new JButton("New Game");
+        buttonNewGame.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+
+            }
+        });
+        buttonPause = new JButton("Pause");
+        buttonPause.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                timer.stop();
+            }
+        });
+        buttonResume = new JButton("Resume");
+        buttonResume.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                timer.start();
+                requestFocus();
+            }
+        });
+        JPanel panelBatton = new JPanel();
+        panelBatton.add(buttonNewGame);
+        panelBatton.add(buttonPause);
+        panelBatton.add(buttonResume);
+        frame.add(panelBatton, BorderLayout.NORTH);
 
         menuItemPauseGame.addActionListener(new ActionListener() {
             @Override
@@ -82,6 +114,13 @@ public class SnakePanel extends JPanel implements ActionListener {
             public void actionPerformed(ActionEvent actionEvent) {
                 System.out.println("Resume");
                 timer.start();
+            }
+        });
+
+        menuItemExitGame.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                System.exit(0);
             }
         });
     }
@@ -99,10 +138,10 @@ public class SnakePanel extends JPanel implements ActionListener {
             graphics.setColor(colorSnake);
             graphics.fillRect(SnakeLogicGame.snake.get(i).CoordX, SnakeLogicGame.snake.get(i).CoordY, SnakeLogicGame.sizeBlock, SnakeLogicGame.sizeBlock);
         }
-        for (int i = 0; i < SnakeLogicGame.eatBlock.size(); i++) {
-            int a = SnakeLogicGame.eatBlock.get(i).CoordX;
-            int b = SnakeLogicGame.eatBlock.get(i).CoordY;
-            graphics.setColor(colorEatBlock);
+        for (int i = 0; i < SnakeLogicGame.eatBlockColor.size(); i++) {
+            int a = SnakeLogicGame.eatBlockColor.get(i).getCoord().CoordX;
+            int b = SnakeLogicGame.eatBlockColor.get(i).getCoord().CoordY;
+            graphics.setColor(SnakeLogicGame.eatBlockColor.get(i).getColorEatBlock());
             graphics.fillRect(a, b, SnakeLogicGame.sizeBlock, SnakeLogicGame.sizeBlock);
         }
     }
@@ -113,44 +152,5 @@ public class SnakePanel extends JPanel implements ActionListener {
         SnakeLogicGame.coincidence();
         repaint();
     }
-    protected static Color colorSnakeBlock () {
-        Color colorRandom;
-        Random random = new Random();
-        int randomValue = random.nextInt(10);
-        switch (randomValue) {
-            case 0:
-                colorRandom = Color.BLUE;
-                break;
-            case 1:
-                colorRandom = Color.RED;
-                break;
-            case 2:
-                colorRandom = Color.GREEN;
-                break;
-            case 3:
-                colorRandom = Color.CYAN;
-                break;
-            case 4:
-                colorRandom = Color.BLACK;
-                break;
-            case 5:
-                colorRandom = Color.PINK;
-                break;
-            case 6:
-                colorRandom = Color.MAGENTA;
-                break;
-            case 7:
-                colorRandom = Color.ORANGE;
-                break;
-            case 8:
-                colorRandom = Color.DARK_GRAY;
-                break;
-            case 9:
-                colorRandom = Color.WHITE;
-                break;
-            default:
-                colorRandom = Color.RED;
-        }
-        return colorRandom;
-    }
+
 }
