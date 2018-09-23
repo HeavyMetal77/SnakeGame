@@ -1,3 +1,4 @@
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -5,12 +6,13 @@ public class SnakeLogicGame {
     protected static int sizeBlock = 10;
     protected static int longSnake = 4;
     protected static int countEatBlock = 3;
+    protected static int score;
     protected static boolean left = false;
     protected static boolean right = true;
     protected static boolean up = false;
     protected static boolean down = false;
     protected static boolean inGame = true;
-    protected static int speedGame = 450;
+    protected static int speedGame = 100;
     protected static ArrayList<Coord> snake;
     protected static ArrayList<Coord> eatBlock;
 
@@ -32,7 +34,7 @@ public class SnakeLogicGame {
         for (int i = 0; i < countEatBlock; i++) {
             int randomEatBlockX = new Random().nextInt(SnakePanel.WIDTH / sizeBlock);
             int randomEatBlockY = new Random().nextInt(SnakePanel.WIDTH  / sizeBlock);
-            eatBlock.add(new Coord(randomEatBlockX, randomEatBlockY));
+            eatBlock.add(new Coord(randomEatBlockX* sizeBlock, randomEatBlockY* sizeBlock));
         }
     }
 
@@ -59,20 +61,35 @@ public class SnakeLogicGame {
         }else {
             SnakePanel.timer.stop();
             inGame = false;
+            SnakePanel.labelStatus.setText("Game Over! Your scores: " + score);
             System.out.println("Game Over");
         }
     }
 
     protected static void coincidence (){
-        for (int i = 0; i < eatBlock.size(); i++) {
-            if(snake.get(0)==eatBlock.get(i)){
-                snake.add(eatBlock.get(i));
-                int randomEatBlockX = new Random().nextInt(SnakePanel.WIDTH / sizeBlock);
-                int randomEatBlockY = new Random().nextInt(SnakePanel.WIDTH  / sizeBlock);
-                eatBlock.add(i, new Coord(randomEatBlockX, randomEatBlockY));
-                System.out.println(snake.size());
+        for (int i = 4; i < snake.size(); i++) {
+            if(snake.size()>4 && snake.get(0).equals(snake.get(i))){
+                SnakePanel.timer.stop();
+                inGame = false;
+                SnakePanel.labelStatus.setText("Game Over! Your scores: " + score);
+                System.out.println("Game Over!");
             }
         }
+        for (int i = 0; i < countEatBlock; i++) {
+            if(snake.get(0).equals(eatBlock.get(i))){
+                System.out.println(snake.get(0) + " " + eatBlock.get(i));
+                Coord coord = eatBlock.get(i);
+                snake.add(coord);
+                SnakePanel.labelStatus.setText("Score: " + (++score));
+                eatBlock.remove(i);
+                SnakePanel.colorEatBlock = SnakePanel.colorSnakeBlock();
+                int randomEatBlockX = new Random().nextInt(SnakePanel.WIDTH / sizeBlock);
+                int randomEatBlockY = new Random().nextInt(SnakePanel.WIDTH  / sizeBlock);
+                eatBlock.add(i, new Coord(randomEatBlockX*sizeBlock, randomEatBlockY*sizeBlock));
+                System.out.println(snake.size() + " " + eatBlock.size() + SnakePanel.colorEatBlock);
+            }
+        }
+
     }
 
 

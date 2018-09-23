@@ -1,6 +1,9 @@
+import java.util.Objects;
+
 public class Coord {
     public int CoordX;
     public int CoordY;
+    public Coord coord;
 
     public Coord(Coord coord) {
         CoordX = coord.CoordX;
@@ -27,4 +30,27 @@ public class Coord {
     public void setCoordY(int coordY) {
         CoordY = coordY;
     }
+
+    @Override
+    public String toString() {
+        return "Coord{" +
+                "CoordX=" + CoordX +
+                ", CoordY=" + CoordY +
+                '}';
+    }
+
+    public Coord getCoord() {
+        return coord;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Coord coord = (Coord) o;
+        return CoordX == coord.CoordX &&
+                CoordY == coord.CoordY;
+    }
+
+
 }

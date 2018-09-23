@@ -6,6 +6,6 @@ public class SnakeMain {
     public SnakeMain() {
         SnakePanel snakePanel = new SnakePanel();
         SnakeLogicGame logicGame = new SnakeLogicGame();
-        
+
     }
 }
