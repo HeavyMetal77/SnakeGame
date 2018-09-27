@@ -1,24 +1,40 @@
 import java.awt.*;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class SnakeLogicGame {
+public class SnakeLogicGame implements Serializable{
     protected static int sizeBlock = 10;
     protected static int longSnake = 4;
-    protected static int countEatBlock = 3;
+    protected static int countEatBlock = 4;
     protected static int score;
+    protected static int bestScoreSession = 0;
     protected static boolean left = false;
     protected static boolean right = true;
     protected static boolean up = false;
     protected static boolean down = false;
     protected static boolean inGame = true;
     protected static int speedGame = 100;
-    protected static ArrayList<Coord> snake;
-    protected static ArrayList<EatBlock> eatBlockColor;
+    protected static ArrayList<Coord> snake = new ArrayList<>();
+    protected static ArrayList<EatBlock> eatBlockColor = new ArrayList<>();
 
     public SnakeLogicGame() {
         initSnake();
         generateEatBlockColor(countEatBlock);
+    }
+
+    protected static void initStartValue(){
+        if(bestScoreSession < score)
+            bestScoreSession = score;
+        longSnake = 4;
+        countEatBlock = 4;
+        score = 0;
+        left = false;
+        right = true;
+        up = false;
+        down = false;
+        inGame = true;
+        speedGame = 100;
     }
 
     protected static void initSnake() {
@@ -38,6 +54,35 @@ public class SnakeLogicGame {
             Color colorBlock = colorSnakeBlock();
             eatBlockColor.add(new EatBlock(colorBlock, newCoord));
         }
+    }
+
+    public static void serializedProgressGame(ObjectOutputStream objectOutputStream) throws IOException {
+        objectOutputStream.writeInt(sizeBlock);
+        objectOutputStream.writeInt(longSnake);
+        objectOutputStream.writeInt(countEatBlock);
+        objectOutputStream.writeInt(score);
+        objectOutputStream.writeInt(bestScoreSession);
+        objectOutputStream.writeBoolean(left);
+        objectOutputStream.writeBoolean(right);
+        objectOutputStream.writeBoolean(up);
+        objectOutputStream.writeBoolean(down);
+        objectOutputStream.writeBoolean(inGame);
+        objectOutputStream.writeObject(snake);
+        objectOutputStream.writeObject(eatBlockColor);
+    }
+    public static void deserializedProgressGame(ObjectInputStream objectInputStream) throws IOException, ClassNotFoundException {
+        sizeBlock = objectInputStream.readInt();
+        longSnake = objectInputStream.readInt();
+        countEatBlock = objectInputStream.readInt();
+        score = objectInputStream.readInt();
+        bestScoreSession = objectInputStream.readInt();
+        left = objectInputStream.readBoolean();
+        right = objectInputStream.readBoolean();
+        up = objectInputStream.readBoolean();
+        down = objectInputStream.readBoolean();
+        inGame = objectInputStream.readBoolean();
+        snake = (ArrayList<Coord>)objectInputStream.readObject();
+        eatBlockColor = (ArrayList<EatBlock>)objectInputStream.readObject();
     }
 
     protected static Color colorSnakeBlock () {
@@ -84,11 +129,10 @@ public class SnakeLogicGame {
     protected static void moveSnake(ArrayList<Coord> snake) {
         if(snake.get(0).CoordX <=SnakePanel.WIDTH && snake.get(0).CoordY <=SnakePanel.WIDTH
                 && snake.get(0).CoordX >=0 && snake.get(0).CoordY >=0){
-            for (int i = snake.size()-1; i > 0; i--) {//для тела змейки
+            for (int i = snake.size()-1; i > 0; i--) {
                 snake.get(i).CoordX = snake.get(i-1).CoordX;
                 snake.get(i).CoordY = snake.get(i-1).CoordY;
             }
-            //для головы змеи - повороты
             if (left) {
                 snake.get(0).CoordX -= sizeBlock;
             }
@@ -104,7 +148,10 @@ public class SnakeLogicGame {
         }else {
             SnakePanel.timer.stop();
             inGame = false;
-            SnakePanel.labelStatus.setText("Game Over! Your scores: " + score);
+            if(bestScoreSession<score){
+                bestScoreSession = score;
+            }
+            SnakePanel.labelStatus.setText("Game Over! Your scores: " + score + ". Best result: " + bestScoreSession);
             System.out.println("Game Over");
         }
     }
@@ -114,7 +161,10 @@ public class SnakeLogicGame {
             if(snake.size()>4 && snake.get(0).equals(snake.get(i))){
                 SnakePanel.timer.stop();
                 inGame = false;
-                SnakePanel.labelStatus.setText("Game Over! Your scores: " + score);
+                if(bestScoreSession<score){
+                    bestScoreSession = score;
+                }
+                SnakePanel.labelStatus.setText("Game Over! Your scores: " + score + ". Best result: " + bestScoreSession);
                 System.out.println("Game Over!");
             }
         }
@@ -123,7 +173,7 @@ public class SnakeLogicGame {
                 System.out.println(snake.get(0) + " " + eatBlockColor.get(i).coord);
                 Coord coord = eatBlockColor.get(i).getCoord();
                 snake.add(coord);
-                SnakePanel.labelStatus.setText("Score: " + (++score));
+                SnakePanel.labelStatus.setText("Your scores: " + (++score) + ". Best result: " + bestScoreSession);
                 eatBlockColor.remove(i);
                 int randomEatBlockX = new Random().nextInt(SnakePanel.WIDTH / sizeBlock);
                 int randomEatBlockY = new Random().nextInt(SnakePanel.WIDTH  / sizeBlock);

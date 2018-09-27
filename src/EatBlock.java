@@ -1,7 +1,8 @@
 import java.awt.*;
+import java.io.Serializable;
 import java.util.Objects;
 
-public class EatBlock {
+public class EatBlock implements Serializable {
     protected Color colorEatBlock;
     protected Coord coord;
 

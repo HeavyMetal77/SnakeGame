@@ -1,6 +1,6 @@
-import java.util.Objects;
+import java.io.Serializable;
 
-public class Coord {
+public class Coord implements Serializable {
     public int CoordX;
     public int CoordY;
     public Coord coord;
