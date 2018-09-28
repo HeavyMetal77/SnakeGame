@@ -1,5 +1,8 @@
 import java.awt.*;
-import java.io.*;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -14,7 +17,7 @@ public class SnakeLogicGame implements Serializable{
     protected static boolean up = false;
     protected static boolean down = false;
     protected static boolean inGame = true;
-    protected static int speedGame = 100;
+    protected static int speedGame = 200;
     protected static ArrayList<Coord> snake = new ArrayList<>();
     protected static ArrayList<EatBlock> eatBlockColor = new ArrayList<>();
 

@@ -13,21 +13,21 @@ public class SnakePanel extends JPanel implements ActionListener {
     protected JMenuBar menuBar;
     protected Color colorPanel = Color.yellow;
     protected static Timer timer;
-    protected static Color colorSnake = Color.BLACK;
+    protected static Color colorSnake = Color.RED;
     protected static JLabel labelStatus;
     protected JFrame frame;
     protected JPanel panelConfig;
-    public File file = new File("C:\\Repository\\snakeGame\\src\\save1.snk");
+    public File file = new File("");
 
     public SnakePanel() throws HeadlessException {
         frame = new JFrame();
         frame.setTitle("Snake");
         frame.setIconImage(new ImageIcon("C:\\Repository\\snakeGame\\src\\snake.png").getImage());
-        frame.setMinimumSize(new Dimension(WIDTH, WIDTH+85));
-        frame.add(this, BorderLayout.CENTER);
-        setPreferredSize(new Dimension(WIDTH, WIDTH));
         setMinimumSize(new Dimension(WIDTH, WIDTH));
+        setPreferredSize(new Dimension(WIDTH, WIDTH));
         setMaximumSize(new Dimension(WIDTH, WIDTH));
+        frame.setMinimumSize(new Dimension(600, 685));
+        frame.add(this, BorderLayout.CENTER);
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setLocationRelativeTo(null);
         setLayout(new BorderLayout());
@@ -58,37 +58,55 @@ public class SnakePanel extends JPanel implements ActionListener {
 
     protected void initMenu(){
         menuBar = new JMenuBar();
+
         JMenu menuGame = new JMenu("Game");
         JMenu menuSettings = new JMenu("Settings");
         JMenuItem menuItemOpenGame = new JMenuItem("Open Game");
-        menuItemOpenGame.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent actionEvent) {
-                JFileChooser fileopen = new JFileChooser();
-                int ret = fileopen.showDialog(frame, "Открыть файл");
-                if (ret == JFileChooser.APPROVE_OPTION) {
-                    File file = fileopen.getSelectedFile();
-                    System.out.println(file.getName());
-                }
-                try (ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream(file))){
-                    SnakeLogicGame.deserializedProgressGame(objectInputStream);
-                } catch (ClassNotFoundException|IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        });
-
-        menuItemOpenGame.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_O, Event.CTRL_MASK));
         JMenuItem menuItemSaveGame = new JMenuItem("Save Game");
+        JMenuItem menuItemNewGame = new JMenuItem("New Game");
+        JMenuItem menuItemPauseGame = new JMenuItem("Pause");
+        JMenuItem menuItemResumeGame = new JMenuItem("Resume");
+        JMenuItem menuItemExitGame = new JMenuItem("Exit");
+        JMenuItem menuItemConfigStartGame = new JMenuItem("ConfigStartGame");
+        JSeparator separator = new JSeparator();
+        separator.setOrientation(SwingConstants.VERTICAL);
+
+        menuItemNewGame.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        menuItemPauseGame.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        menuItemResumeGame.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        menuItemExitGame.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+
+        menuItemNewGame.setBackground(Color.GREEN);
+        menuItemPauseGame.setBackground(Color.GREEN);
+        menuItemResumeGame.setBackground(Color.GREEN);
+        menuItemExitGame.setBackground(Color.GREEN);
+
+        menuItemNewGame.setBorder(BorderFactory.createLineBorder(Color.BLUE));
+        menuItemPauseGame.setBorder(BorderFactory.createLineBorder(Color.BLUE));
+        menuItemResumeGame.setBorder(BorderFactory.createLineBorder(Color.BLUE));
+        menuItemExitGame.setBorder(BorderFactory.createLineBorder(Color.BLUE));
+
+        JMenu menuItemSkin = new JMenu("Skin");
+        JMenuItem menuItemSkin1 = new JMenuItem("Skin1");
+        JMenuItem menuItemSkin2 = new JMenuItem("Skin2");
+        JMenuItem menuItemSkin3 = new JMenuItem("Skin3");
+
+        menuItemSkin.add(menuItemSkin1);
+        menuItemSkin.add(menuItemSkin2);
+        menuItemSkin.add(menuItemSkin3);
+
         menuItemSaveGame.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                JFileChooser fileopen = new JFileChooser();
-                int ret = fileopen.showSaveDialog(frame);
+                JFileChooser fileChooser = new JFileChooser();
+                fileChooser.setCurrentDirectory(new File("D:\\"));
+                fileChooser.setFileFilter(new filterFileSnake());
+                int ret = fileChooser.showSaveDialog(frame);
                 if (ret == JFileChooser.APPROVE_OPTION) {
-                    File file1 = fileopen.getSelectedFile();
-//                    file1 = file;
-                    System.out.println(file1.getName());
+                    file = fileChooser.getSelectedFile();
+                    if(!fileChooser.getSelectedFile().getName().endsWith("snk")){
+                        file = new File(file.getPath()+ ".snk");
+                    }
                     try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(file))){
                         SnakeLogicGame.serializedProgressGame(objectOutputStream);
                     } catch (FileNotFoundException e) {
@@ -99,38 +117,26 @@ public class SnakePanel extends JPanel implements ActionListener {
                 }
             }
         });
-        menuItemSaveGame.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, Event.CTRL_MASK));
-        JMenuItem menuItemNewGame = new JMenuItem("New Game");
-        menuItemNewGame.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        menuItemNewGame.setBackground(Color.GREEN);
-        menuItemNewGame.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_A, Event.CTRL_MASK));
-        menuItemNewGame.setBorder(BorderFactory.createLineBorder(Color.BLUE));
-        JMenuItem menuItemPauseGame = new JMenuItem("Pause");
-        menuItemPauseGame.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Z, Event.CTRL_MASK));
-        menuItemPauseGame.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        menuItemPauseGame.setBackground(Color.GREEN);
-        menuItemPauseGame.setBorder(BorderFactory.createLineBorder(Color.BLUE));
-        JMenuItem menuItemResumeGame = new JMenuItem("Resume");
-        menuItemResumeGame.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Q, Event.CTRL_MASK));
-        menuItemResumeGame.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        menuItemResumeGame.setBackground(Color.GREEN);
-        menuItemResumeGame.setBorder(BorderFactory.createLineBorder(Color.BLUE));
-        JMenuItem menuItemExitGame = new JMenuItem("Exit");
-        menuItemExitGame.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_X, Event.CTRL_MASK));
-        menuItemExitGame.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        menuItemExitGame.setBorder(BorderFactory.createLineBorder(Color.BLUE));
-        menuItemExitGame.setBackground(Color.GREEN);
-        JMenuItem menuItemConfigStartGame = new JMenuItem("ConfigStartGame");
-        menuItemExitGame.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_C, Event.CTRL_MASK));
 
-        JMenu menuItemSkin = new JMenu("Skin");
-        JMenuItem menuItemSkin1 = new JMenuItem("Skin1");
-        JMenuItem menuItemSkin2 = new JMenuItem("Skin2");
-        JMenuItem menuItemSkin3 = new JMenuItem("Skin3");
-
-        menuItemSkin.add(menuItemSkin1);
-        menuItemSkin.add(menuItemSkin2);
-        menuItemSkin.add(menuItemSkin3);
+        menuItemOpenGame.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                JFileChooser fileChooser = new JFileChooser();
+                fileChooser.setCurrentDirectory(new File("D:\\"));
+                fileChooser.setFileFilter(new filterFileSnake());
+                int ret = fileChooser.showDialog(frame, "Открыть файл");
+                if (ret == JFileChooser.APPROVE_OPTION) {
+                    file = fileChooser.getSelectedFile();
+                    try (ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream(file))){
+                        SnakeLogicGame.deserializedProgressGame(objectInputStream);
+                        labelStatus.setText("Welcome! Score: " + SnakeLogicGame.score + ". Best result: " + SnakeLogicGame.bestScoreSession);
+                        repaint();
+                    } catch (ClassNotFoundException|IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        });
 
         menuItemSkin1.addActionListener(new ActionListener() {
             @Override
@@ -171,25 +177,24 @@ public class SnakePanel extends JPanel implements ActionListener {
             }
         });
 
-        menuGame.add(menuItemOpenGame);
-        menuGame.add(menuItemSaveGame);
-        menuSettings.add(menuItemConfigStartGame);
-        menuSettings.add(menuItemSkin);
-        menuBar.add(menuGame);
-        menuBar.add(menuSettings);
-        JSeparator separator = new JSeparator();
-        separator.setOrientation(SwingConstants.VERTICAL);
-        menuBar.add(separator);
-        menuBar.add(menuItemNewGame);
-        menuBar.add(menuItemPauseGame);
-        menuBar.add(menuItemResumeGame);
-        menuBar.add(menuItemExitGame);
         menuItemConfigStartGame.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 initPanelConfig();
             }
         });
+
+        menuGame.add(menuItemOpenGame);
+        menuGame.add(menuItemSaveGame);
+        menuSettings.add(menuItemConfigStartGame);
+        menuSettings.add(menuItemSkin);
+        menuBar.add(menuGame);
+        menuBar.add(menuSettings);
+        menuBar.add(separator);
+        menuBar.add(menuItemNewGame);
+        menuBar.add(menuItemPauseGame);
+        menuBar.add(menuItemResumeGame);
+        menuBar.add(menuItemExitGame);
 
 
         menuItemNewGame.addActionListener(new ActionListener() {
@@ -206,7 +211,6 @@ public class SnakePanel extends JPanel implements ActionListener {
         menuItemPauseGame.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                System.out.println("Pause");
                 timer.stop();
             }
         });
@@ -214,7 +218,6 @@ public class SnakePanel extends JPanel implements ActionListener {
         menuItemResumeGame.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                System.out.println("Resume");
                 timer.start();
             }
         });
@@ -225,6 +228,13 @@ public class SnakePanel extends JPanel implements ActionListener {
                 System.exit(0);
             }
         });
+
+        menuItemOpenGame.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_O, Event.CTRL_MASK));
+        menuItemSaveGame.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, Event.CTRL_MASK));
+        menuItemNewGame.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_A, Event.CTRL_MASK));
+        menuItemPauseGame.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Z, Event.CTRL_MASK));
+        menuItemResumeGame.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_C, Event.CTRL_MASK));
+        menuItemExitGame.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_X, Event.CTRL_MASK));
     }
 
     private void initLabel(){
