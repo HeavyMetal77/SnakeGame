@@ -17,7 +17,7 @@ public class SnakeLogicGame implements Serializable{
     protected static boolean up = false;
     protected static boolean down = false;
     protected static boolean inGame = true;
-    protected static int speedGame = 200;
+    protected static int speedGame = 400;
     protected static ArrayList<Coord> snake = new ArrayList<>();
     protected static ArrayList<EatBlock> eatBlockColor = new ArrayList<>();
 
@@ -37,7 +37,6 @@ public class SnakeLogicGame implements Serializable{
         up = false;
         down = false;
         inGame = true;
-        speedGame = 100;
     }
 
     protected static void initSnake() {

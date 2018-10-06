@@ -15,14 +15,12 @@ public class SnakeMain {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-
                 new SnakeMain();
             }
         });
     }
 
     public SnakeMain() {
-
         snakePanel = new SnakePanel();
         logicGame = new SnakeLogicGame();
     }
