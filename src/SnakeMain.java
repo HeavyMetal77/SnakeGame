@@ -12,12 +12,16 @@ public class SnakeMain {
             e.printStackTrace();
         }
 
+
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
                 new SnakeMain();
             }
         });
+
+
+
     }
 
     public SnakeMain() {

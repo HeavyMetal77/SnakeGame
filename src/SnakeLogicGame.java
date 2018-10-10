@@ -6,10 +6,10 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class SnakeLogicGame implements Serializable{
+public class SnakeLogicGame implements Serializable {
     protected static int sizeBlock = 10;
     protected static int longSnake = 4;
-    protected static int countEatBlock = 4;
+    protected static int countEatBlock = 5;
     protected static int score;
     protected static int bestScoreSession = 0;
     protected static boolean left = false;
@@ -17,7 +17,7 @@ public class SnakeLogicGame implements Serializable{
     protected static boolean up = false;
     protected static boolean down = false;
     protected static boolean inGame = true;
-    protected static int speedGame = 400;
+    protected static int speedGame = 150;
     protected static ArrayList<Coord> snake = new ArrayList<>();
     protected static ArrayList<EatBlock> eatBlockColor = new ArrayList<>();
 
@@ -26,8 +26,8 @@ public class SnakeLogicGame implements Serializable{
         generateEatBlockColor(countEatBlock);
     }
 
-    protected static void initStartValue(){
-        if(bestScoreSession < score)
+    protected static void initStartValue() {
+        if (bestScoreSession < score)
             bestScoreSession = score;
         longSnake = 4;
         countEatBlock = 4;
@@ -51,10 +51,19 @@ public class SnakeLogicGame implements Serializable{
         eatBlockColor = new ArrayList<>(countEatBlock);
         for (int i = 0; i < countEatBlock; i++) {
             int randomEatBlockX = new Random().nextInt(SnakePanel.WIDTH / sizeBlock);
-            int randomEatBlockY = new Random().nextInt(SnakePanel.WIDTH  / sizeBlock);
-            Coord newCoord = new Coord(randomEatBlockX* sizeBlock, randomEatBlockY* sizeBlock);
-            Color colorBlock = colorSnakeBlock();
-            eatBlockColor.add(new EatBlock(colorBlock, newCoord));
+            int randomEatBlockY = new Random().nextInt(SnakePanel.WIDTH / sizeBlock);
+            Coord newCoord = new Coord(randomEatBlockX * sizeBlock, randomEatBlockY * sizeBlock);
+            Boolean flag = false;
+            for (Coord temp : snake) {
+                if (newCoord.equals(temp)) {
+                    flag = true;
+                    i--;
+                }
+            }
+            if (!flag) {
+                Color colorBlock = colorSnakeBlock();
+                eatBlockColor.add(new EatBlock(colorBlock, newCoord));
+            }
         }
     }
 
@@ -72,6 +81,7 @@ public class SnakeLogicGame implements Serializable{
         objectOutputStream.writeObject(snake);
         objectOutputStream.writeObject(eatBlockColor);
     }
+
     public static void deserializedProgressGame(ObjectInputStream objectInputStream) throws IOException, ClassNotFoundException {
         sizeBlock = objectInputStream.readInt();
         longSnake = objectInputStream.readInt();
@@ -83,11 +93,89 @@ public class SnakeLogicGame implements Serializable{
         up = objectInputStream.readBoolean();
         down = objectInputStream.readBoolean();
         inGame = objectInputStream.readBoolean();
-        snake = (ArrayList<Coord>)objectInputStream.readObject();
-        eatBlockColor = (ArrayList<EatBlock>)objectInputStream.readObject();
+        snake = (ArrayList<Coord>) objectInputStream.readObject();
+        eatBlockColor = (ArrayList<EatBlock>) objectInputStream.readObject();
     }
 
-    protected static Color colorSnakeBlock () {
+    protected static void speedGameLevel(int value) {
+        switch (value) {
+            case 1:
+                speedGame = 400;
+                break;
+            case 2:
+                speedGame = 350;
+                break;
+            case 3:
+                speedGame = 300;
+                break;
+            case 4:
+                speedGame = 250;
+                break;
+            case 5:
+                speedGame = 200;
+                break;
+            case 6:
+                speedGame = 150;
+                break;
+            case 7:
+                speedGame = 100;
+                break;
+            case 8:
+                speedGame = 80;
+                break;
+            case 9:
+                speedGame = 50;
+                break;
+            case 10:
+                speedGame = 30;
+                break;
+            default:
+                speedGame = 400;
+                break;
+        }
+    }
+
+    protected static int labelSliderSpeed(int speedGame) {
+        int labelSlider;
+        switch (speedGame) {
+            case 400:
+                labelSlider = 1;
+                break;
+            case 350:
+                labelSlider = 2;
+                break;
+            case 300:
+                labelSlider = 3;
+                break;
+            case 250:
+                labelSlider = 4;
+                break;
+            case 200:
+                labelSlider = 5;
+                break;
+            case 150:
+                labelSlider = 6;
+                break;
+            case 100:
+                labelSlider = 7;
+                break;
+            case 80:
+                labelSlider = 8;
+                break;
+            case 50:
+                labelSlider = 9;
+                break;
+            case 30:
+                labelSlider = 10;
+                break;
+            default:
+                labelSlider = 1;
+                break;
+        }
+        return labelSlider;
+    }
+
+    protected static Color colorSnakeBlock() {
         Color colorRandom;
         Random random = new Random();
         int randomValue = random.nextInt(10);
@@ -129,11 +217,11 @@ public class SnakeLogicGame implements Serializable{
     }
 
     protected static void moveSnake(ArrayList<Coord> snake) {
-        if(snake.get(0).CoordX <=SnakePanel.WIDTH && snake.get(0).CoordY <=SnakePanel.WIDTH
-                && snake.get(0).CoordX >=0 && snake.get(0).CoordY >=0){
-            for (int i = snake.size()-1; i > 0; i--) {
-                snake.get(i).CoordX = snake.get(i-1).CoordX;
-                snake.get(i).CoordY = snake.get(i-1).CoordY;
+        if (snake.get(0).CoordX <= SnakePanel.WIDTH && snake.get(0).CoordY <= SnakePanel.WIDTH
+                && snake.get(0).CoordX >= 0 && snake.get(0).CoordY >= 0) {
+            for (int i = snake.size() - 1; i > 0; i--) {
+                snake.get(i).CoordX = snake.get(i - 1).CoordX;
+                snake.get(i).CoordY = snake.get(i - 1).CoordY;
             }
             if (left) {
                 snake.get(0).CoordX -= sizeBlock;
@@ -147,10 +235,10 @@ public class SnakeLogicGame implements Serializable{
             if (down) {
                 snake.get(0).CoordY += sizeBlock;
             }
-        }else {
+        } else {
             SnakePanel.timer.stop();
             inGame = false;
-            if(bestScoreSession<score){
+            if (bestScoreSession < score) {
                 bestScoreSession = score;
             }
             SnakePanel.labelStatus.setText("Game Over! Your scores: " + score + ". Best result: " + bestScoreSession);
@@ -158,12 +246,12 @@ public class SnakeLogicGame implements Serializable{
         }
     }
 
-    protected static void coincidence (){
+    protected static void coincidence() {
         for (int i = 4; i < snake.size(); i++) {
-            if(snake.size()>4 && snake.get(0).equals(snake.get(i))){
+            if (snake.size() > 4 && snake.get(0).equals(snake.get(i))) {
                 SnakePanel.timer.stop();
                 inGame = false;
-                if(bestScoreSession<score){
+                if (bestScoreSession < score) {
                     bestScoreSession = score;
                 }
                 SnakePanel.labelStatus.setText("Game Over! Your scores: " + score + ". Best result: " + bestScoreSession);
@@ -171,18 +259,30 @@ public class SnakeLogicGame implements Serializable{
             }
         }
         for (int i = 0; i < countEatBlock; i++) {
-            if(snake.get(0).equals(eatBlockColor.get(i).coord)){
+            System.out.println("0: " + snake.get(0) + i + ": " + eatBlockColor.get(i).coord);
+            if (snake.get(0).equals(eatBlockColor.get(i).coord)) {
                 System.out.println(snake.get(0) + " " + eatBlockColor.get(i).coord);
                 Coord coord = eatBlockColor.get(i).getCoord();
                 snake.add(coord);
                 SnakePanel.labelStatus.setText("Your scores: " + (++score) + ". Best result: " + bestScoreSession);
                 eatBlockColor.remove(i);
-                int randomEatBlockX = new Random().nextInt(SnakePanel.WIDTH / sizeBlock);
-                int randomEatBlockY = new Random().nextInt(SnakePanel.WIDTH  / sizeBlock);
                 Color temp = colorSnakeBlock();
-                eatBlockColor.add(i, new EatBlock(temp, new Coord(randomEatBlockX*sizeBlock, randomEatBlockY*sizeBlock)));
-                System.out.println(snake.size() + " " + eatBlockColor.size() + eatBlockColor.get(i).getColorEatBlock());
+                int randomEatBlockX = new Random().nextInt(SnakePanel.WIDTH / sizeBlock);
+                int randomEatBlockY = new Random().nextInt(SnakePanel.WIDTH / sizeBlock);
+                Coord newCoord = new Coord(randomEatBlockX * sizeBlock, randomEatBlockY * sizeBlock);
+
+                Boolean flag = false;
+                for (Coord coordTemp : snake) {
+                    if (newCoord.equals(coordTemp)) {
+                        flag = true;
+                        i--;
+                    }
+                }
+                if (!flag) {
+                    eatBlockColor.add(i, new EatBlock(temp, newCoord));
+                }
             }
         }
     }
 }
+

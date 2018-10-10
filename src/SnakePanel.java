@@ -44,7 +44,7 @@ public class SnakePanel extends JPanel implements ActionListener {
         setPreferredSize(new Dimension(WIDTH, WIDTH));
         setMaximumSize(new Dimension(WIDTH, WIDTH));
         setBorder(BorderFactory.createLineBorder(Color.blue));
-        frame.setMinimumSize(new Dimension(WIDTH+17, WIDTH+80));
+        frame.setMinimumSize(new Dimension(WIDTH+18, WIDTH+81));
         frame.add(this, BorderLayout.WEST);
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setLocationRelativeTo(null);
@@ -66,44 +66,48 @@ public class SnakePanel extends JPanel implements ActionListener {
         requestFocus();
     }
 
-
-    protected void speedGameLevel(int value){
-        switch (value){
-            case 1: SnakeLogicGame.speedGame = 400; break;
-            case 2: SnakeLogicGame.speedGame = 350; break;
-            case 3: SnakeLogicGame.speedGame = 300; break;
-            case 4: SnakeLogicGame.speedGame = 250; break;
-            case 5: SnakeLogicGame.speedGame = 200; break;
-            case 6: SnakeLogicGame.speedGame = 150; break;
-            case 7: SnakeLogicGame.speedGame = 100; break;
-            case 8: SnakeLogicGame.speedGame = 80; break;
-            case 9: SnakeLogicGame.speedGame = 50; break;
-            case 10: SnakeLogicGame.speedGame = 30; break;
-            default: SnakeLogicGame.speedGame = 400; break;
-        }
-    }
-
     protected void initPanelConfig(){
         timer.stop();
-        panelConfig = new JFrame();
-        panelConfig.setMinimumSize(new Dimension(WIDTH,WIDTH));
-        panelConfig.setBackground(Color.blue);
+        panelConfig = new JFrame("Game configuration");
+        panelConfig.setMinimumSize(new Dimension(WIDTH/2,WIDTH));
         panelConfig.setLocationRelativeTo(null);
         panelConfig.setVisible(true);
         panelConfig.setResizable(false);
-        panelConfig.setAlwaysOnTop(true);
         panelConfig.setLayout(new FlowLayout());
+        JPanel subPanelConfig1 = new JPanel();
+        JPanel subPanelConfig2 = new JPanel();
+        JPanel subPanelConfig3 = new JPanel();
+        JPanel subPanelConfig4 = new JPanel();
 
-        JLabel labelTitle = new JLabel("Game configuration:");
-        panelConfig.add(labelTitle);
+//        subPanelConfig1.setBackground(Color.ORANGE);
+        subPanelConfig1.setPreferredSize(new Dimension(WIDTH/2, 50));
+//        subPanelConfig2.setBackground(Color.BLUE);
+        subPanelConfig2.setPreferredSize(new Dimension(WIDTH/2, 30));
+//        subPanelConfig3.setBackground(Color.GREEN);
+        subPanelConfig3.setPreferredSize(new Dimension(WIDTH/2, 30));
+//        subPanelConfig4.setBackground(Color.yellow);
+        subPanelConfig4.setPreferredSize(new Dimension(WIDTH/2, 50));
+
+        JButton buttonColorChooser = new JButton("Select color");
+        buttonColorChooser.setBackground(colorPanel);
+        buttonColorChooser.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                JColorChooser colorChooser = new JColorChooser();
+                Color color = colorChooser.showDialog(null, "Select a color", colorPanel);
+                buttonColorChooser.setBackground(color);
+                colorPanel = color;
+                setBackground(colorPanel);
+            }
+        });
+
+        subPanelConfig2.add(buttonColorChooser);
 
         JLabel labelSlider = new JLabel();
         labelSlider.setPreferredSize(new Dimension(100, 20));
-        labelSlider.setText("Speed game: " + labelSliderSpeed(SnakeLogicGame.speedGame));
+        labelSlider.setText("Speed game: " + SnakeLogicGame.labelSliderSpeed(SnakeLogicGame.speedGame));
 
-        panelConfig.add(labelSlider);
-
-        JSlider slider = new JSlider(1, 10, labelSliderSpeed(SnakeLogicGame.speedGame));
+        JSlider slider = new JSlider(1, 10, SnakeLogicGame.labelSliderSpeed(SnakeLogicGame.speedGame));
         slider.setPaintTicks(true);
         slider.setPaintLabels(true);
         slider.setPaintTrack(true);
@@ -116,7 +120,9 @@ public class SnakePanel extends JPanel implements ActionListener {
                 labelSlider.setText("Speed game: " + source.getValue());
             }
         });
-        panelConfig.add(slider, "Labels");
+
+        subPanelConfig1.add(labelSlider);
+        subPanelConfig1.add(slider);
         slider.setOrientation(SwingConstants.HORIZONTAL);
 
         JButton buttonOK = new JButton("OK");
@@ -125,13 +131,16 @@ public class SnakePanel extends JPanel implements ActionListener {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 panelConfig.setVisible(false);
-                speedGameLevel(slider.getValue());
-                System.out.println("speed: " + SnakeLogicGame.speedGame);
-                SnakeLogicGame.initStartValue();
                 labelStatus.setText("Welcome! Score: " + SnakeLogicGame.score + ". Best result: " + SnakeLogicGame.bestScoreSession);
-                repaint();
-                timer.setDelay(SnakeLogicGame.speedGame);
-                timer.restart();
+                if(SnakeLogicGame.inGame){
+                    SnakeLogicGame.speedGameLevel(slider.getValue());
+                    SnakeLogicGame.initStartValue();
+                    repaint();
+                    timer.setDelay(SnakeLogicGame.speedGame);
+                    timer.restart();
+                }else {
+                    timer.stop();
+                }
             }
         });
 
@@ -140,34 +149,23 @@ public class SnakePanel extends JPanel implements ActionListener {
         buttonCancel.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                repaint();
-                timer.setDelay(SnakeLogicGame.speedGame);
-                timer.restart();
+                if(SnakeLogicGame.inGame){
+                    timer.setDelay(SnakeLogicGame.speedGame);
+                    timer.restart();
+                }else {
+                    timer.stop();
+                }
                 panelConfig.setVisible(false);
             }
         });
 
-        panelConfig.add(buttonOK);
-        panelConfig.add(buttonCancel);
+        subPanelConfig3.add(buttonOK);
+        subPanelConfig3.add(buttonCancel);
 
-    }
-
-    protected int labelSliderSpeed(int speedGame){
-        int labelSlider;
-        switch (speedGame){
-            case 400: labelSlider = 1; break;
-            case 350: labelSlider = 2; break;
-            case 300: labelSlider = 3; break;
-            case 250: labelSlider = 4; break;
-            case 200: labelSlider = 5; break;
-            case 150: labelSlider = 6; break;
-            case 100: labelSlider = 7; break;
-            case 80: labelSlider = 8; break;
-            case 50: labelSlider = 9; break;
-            case 30: labelSlider = 10; break;
-            default: labelSlider = 1; break;
-        }
-        return labelSlider;
+        panelConfig.add(subPanelConfig1);
+        panelConfig.add(subPanelConfig2);
+        panelConfig.add(subPanelConfig3);
+        panelConfig.add(subPanelConfig4);
     }
 
     protected void initMenu(){
@@ -241,8 +239,6 @@ public class SnakePanel extends JPanel implements ActionListener {
             graphics.setColor(colorSnake);
             graphics.fillRect(SnakeLogicGame.snake.get(i).CoordX, SnakeLogicGame.snake.get(i).CoordY, SnakeLogicGame.sizeBlock, SnakeLogicGame.sizeBlock);
         }
-        System.out.println("speed from paint: " + SnakeLogicGame.speedGame);
-
 //        graphics.fillRect(600, 600, SnakeLogicGame.sizeBlock, SnakeLogicGame.sizeBlock);
         for (int i = 0; i < SnakeLogicGame.eatBlockColor.size(); i++) {
             int a = SnakeLogicGame.eatBlockColor.get(i).getCoord().CoordX;
