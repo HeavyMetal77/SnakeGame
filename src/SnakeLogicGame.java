@@ -6,10 +6,10 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class SnakeLogicGame implements Serializable {
+public class SnakeLogicGame implements Serializable, Runnable {
     protected static int sizeBlock = 10;
     protected static int longSnake = 4;
-    protected static int countEatBlock = 5;
+    protected static int countEatBlock = 1500;
     protected static int score;
     protected static int bestScoreSession = 0;
     protected static boolean left = false;
@@ -29,8 +29,6 @@ public class SnakeLogicGame implements Serializable {
     protected static void initStartValue() {
         if (bestScoreSession < score)
             bestScoreSession = score;
-        longSnake = 4;
-        countEatBlock = 4;
         score = 0;
         left = false;
         right = true;
@@ -50,8 +48,8 @@ public class SnakeLogicGame implements Serializable {
     protected void generateEatBlockColor(int countEatBlock) {
         eatBlockColor = new ArrayList<>(countEatBlock);
         for (int i = 0; i < countEatBlock; i++) {
-            int randomEatBlockX = new Random().nextInt(SnakePanel.WIDTH / sizeBlock);
-            int randomEatBlockY = new Random().nextInt(SnakePanel.WIDTH / sizeBlock);
+            int randomEatBlockX = new Random().nextInt(SnakePanel.WIDTH / sizeBlock+1);
+            int randomEatBlockY = new Random().nextInt(SnakePanel.WIDTH / sizeBlock+1);
             Coord newCoord = new Coord(randomEatBlockX * sizeBlock, randomEatBlockY * sizeBlock);
             Boolean flag = false;
             for (Coord temp : snake) {
@@ -259,30 +257,36 @@ public class SnakeLogicGame implements Serializable {
             }
         }
         for (int i = 0; i < countEatBlock; i++) {
-            System.out.println("0: " + snake.get(0) + i + ": " + eatBlockColor.get(i).coord);
-            if (snake.get(0).equals(eatBlockColor.get(i).coord)) {
-                System.out.println(snake.get(0) + " " + eatBlockColor.get(i).coord);
-                Coord coord = eatBlockColor.get(i).getCoord();
-                snake.add(coord);
-                SnakePanel.labelStatus.setText("Your scores: " + (++score) + ". Best result: " + bestScoreSession);
-                eatBlockColor.remove(i);
-                Color temp = colorSnakeBlock();
-                int randomEatBlockX = new Random().nextInt(SnakePanel.WIDTH / sizeBlock);
-                int randomEatBlockY = new Random().nextInt(SnakePanel.WIDTH / sizeBlock);
-                Coord newCoord = new Coord(randomEatBlockX * sizeBlock, randomEatBlockY * sizeBlock);
+            try {
+                if (snake.get(0).equals(eatBlockColor.get(i).coord)) {
+                    Coord coord = eatBlockColor.get(i).getCoord();
+                    snake.add(coord);
+                    SnakePanel.labelStatus.setText("Your scores: " + (++score) + ". Best result: " + bestScoreSession);
+                    eatBlockColor.remove(i);
+                    Color temp = colorSnakeBlock();
+                    int randomEatBlockX = new Random().nextInt(SnakePanel.WIDTH / sizeBlock);
+                    int randomEatBlockY = new Random().nextInt(SnakePanel.WIDTH / sizeBlock);
+                    Coord newCoord = new Coord(randomEatBlockX * sizeBlock, randomEatBlockY * sizeBlock);
 
-                Boolean flag = false;
-                for (Coord coordTemp : snake) {
-                    if (newCoord.equals(coordTemp)) {
-                        flag = true;
-                        i--;
+                    Boolean flag = false;
+                    for (Coord coordTemp : snake) {
+                        if (newCoord.equals(coordTemp)) {
+                            flag = true;
+                            i--;
+                        }
+                    }
+                    if (!flag) {
+                        eatBlockColor.add(i, new EatBlock(temp, newCoord));
                     }
                 }
-                if (!flag) {
-                    eatBlockColor.add(i, new EatBlock(temp, newCoord));
-                }
+            }catch (Exception e){
+                e.toString();
             }
         }
+    }
+
+    @Override
+    public void run() {
     }
 }
 

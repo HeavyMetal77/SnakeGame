@@ -10,7 +10,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.io.*;
 
-public class SnakePanel extends JPanel implements ActionListener {
+public class SnakePanel extends JPanel implements ActionListener, Runnable {
     protected static final int WIDTH = 600;
     protected JMenuBar menuBar;
     protected Color colorPanel = Color.yellow;
@@ -19,6 +19,7 @@ public class SnakePanel extends JPanel implements ActionListener {
     protected static JLabel labelStatus;
     protected JFrame frame;
     protected JFrame panelConfig;
+    protected JFrame panelTableResult = new JFrame("Table of Winners");
     public File file = new File("");
 
     JMenu menuGame;
@@ -69,7 +70,7 @@ public class SnakePanel extends JPanel implements ActionListener {
     protected void initPanelConfig(){
         timer.stop();
         panelConfig = new JFrame("Game configuration");
-        panelConfig.setMinimumSize(new Dimension(WIDTH/2,WIDTH));
+        panelConfig.setMinimumSize(new Dimension(WIDTH/2,210));
         panelConfig.setLocationRelativeTo(null);
         panelConfig.setVisible(true);
         panelConfig.setResizable(false);
@@ -79,13 +80,9 @@ public class SnakePanel extends JPanel implements ActionListener {
         JPanel subPanelConfig3 = new JPanel();
         JPanel subPanelConfig4 = new JPanel();
 
-//        subPanelConfig1.setBackground(Color.ORANGE);
         subPanelConfig1.setPreferredSize(new Dimension(WIDTH/2, 50));
-//        subPanelConfig2.setBackground(Color.BLUE);
         subPanelConfig2.setPreferredSize(new Dimension(WIDTH/2, 30));
-//        subPanelConfig3.setBackground(Color.GREEN);
         subPanelConfig3.setPreferredSize(new Dimension(WIDTH/2, 30));
-//        subPanelConfig4.setBackground(Color.yellow);
         subPanelConfig4.setPreferredSize(new Dimension(WIDTH/2, 50));
 
         JButton buttonColorChooser = new JButton("Select color");
@@ -159,8 +156,18 @@ public class SnakePanel extends JPanel implements ActionListener {
             }
         });
 
-        subPanelConfig3.add(buttonOK);
-        subPanelConfig3.add(buttonCancel);
+        JButton buttonResultTable = new JButton("Table of Winners");
+        buttonResultTable.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                panelTableResult.setLocationRelativeTo(null);
+                panelTableResult.setSize(new Dimension(300, 500));
+                panelTableResult.setVisible(true);
+            }
+        });
+        subPanelConfig3.add(buttonResultTable);
+        subPanelConfig4.add(buttonOK);
+        subPanelConfig4.add(buttonCancel);
 
         panelConfig.add(subPanelConfig1);
         panelConfig.add(subPanelConfig2);
@@ -222,7 +229,7 @@ public class SnakePanel extends JPanel implements ActionListener {
         menuItemPauseGame.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Z, Event.CTRL_MASK));
         menuItemResumeGame.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_C, Event.CTRL_MASK));
         menuItemExitGame.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_X, Event.CTRL_MASK));
-        menuItemConfigStartGame.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Q, Event.CTRL_MASK));
+        menuItemConfigStartGame.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_P, Event.CTRL_MASK));
     }
 
     private void initLabel(){
@@ -239,7 +246,6 @@ public class SnakePanel extends JPanel implements ActionListener {
             graphics.setColor(colorSnake);
             graphics.fillRect(SnakeLogicGame.snake.get(i).CoordX, SnakeLogicGame.snake.get(i).CoordY, SnakeLogicGame.sizeBlock, SnakeLogicGame.sizeBlock);
         }
-//        graphics.fillRect(600, 600, SnakeLogicGame.sizeBlock, SnakeLogicGame.sizeBlock);
         for (int i = 0; i < SnakeLogicGame.eatBlockColor.size(); i++) {
             int a = SnakeLogicGame.eatBlockColor.get(i).getCoord().CoordX;
             int b = SnakeLogicGame.eatBlockColor.get(i).getCoord().CoordY;
@@ -357,7 +363,7 @@ public class SnakePanel extends JPanel implements ActionListener {
         menuItemNewGame.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                SnakeMain.logicGame = new SnakeLogicGame();
+                new SnakeLogicGame();
                 SnakeLogicGame.initStartValue();
                 labelStatus.setText("Welcome! Score: " + SnakeLogicGame.score + ". Best result: " + SnakeLogicGame.bestScoreSession);
                 repaint();
@@ -385,5 +391,9 @@ public class SnakePanel extends JPanel implements ActionListener {
                 System.exit(0);
             }
         });
+    }
+
+    @Override
+    public void run() {
     }
 }
