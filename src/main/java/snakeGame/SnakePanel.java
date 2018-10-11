@@ -1,3 +1,5 @@
+package snakeGame;
+
 import com.jtattoo.plaf.aluminium.AluminiumLookAndFeel;
 import com.jtattoo.plaf.mint.MintLookAndFeel;
 
@@ -40,7 +42,7 @@ public class SnakePanel extends JPanel implements ActionListener, Runnable {
     public SnakePanel() throws HeadlessException {
         frame = new JFrame();
         frame.setTitle("Snake");
-        frame.setIconImage(new ImageIcon("C:\\Repository\\snakeGame\\src\\snake.png").getImage());
+        frame.setIconImage(new ImageIcon("C:\\Repository\\java.snakeGame\\src\\snake.png").getImage());
         setMinimumSize(new Dimension(WIDTH, WIDTH));
         setPreferredSize(new Dimension(WIDTH, WIDTH));
         setMaximumSize(new Dimension(WIDTH, WIDTH));
@@ -85,7 +87,7 @@ public class SnakePanel extends JPanel implements ActionListener, Runnable {
         subPanelConfig3.setPreferredSize(new Dimension(WIDTH/2, 30));
         subPanelConfig4.setPreferredSize(new Dimension(WIDTH/2, 50));
 
-        JButton buttonColorChooser = new JButton("Select color");
+        final JButton buttonColorChooser = new JButton("Select color");
         buttonColorChooser.setBackground(colorPanel);
         buttonColorChooser.addActionListener(new ActionListener() {
             @Override
@@ -100,11 +102,11 @@ public class SnakePanel extends JPanel implements ActionListener, Runnable {
 
         subPanelConfig2.add(buttonColorChooser);
 
-        JLabel labelSlider = new JLabel();
+        final JLabel labelSlider = new JLabel();
         labelSlider.setPreferredSize(new Dimension(100, 20));
         labelSlider.setText("Speed game: " + SnakeLogicGame.labelSliderSpeed(SnakeLogicGame.speedGame));
 
-        JSlider slider = new JSlider(1, 10, SnakeLogicGame.labelSliderSpeed(SnakeLogicGame.speedGame));
+        final JSlider slider = new JSlider(1, 10, SnakeLogicGame.labelSliderSpeed(SnakeLogicGame.speedGame));
         slider.setPaintTicks(true);
         slider.setPaintLabels(true);
         slider.setPaintTrack(true);

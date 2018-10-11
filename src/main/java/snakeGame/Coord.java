@@ -1,3 +1,5 @@
+package snakeGame;
+
 import java.io.Serializable;
 
 public class Coord implements Serializable {

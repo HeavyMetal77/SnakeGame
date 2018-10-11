@@ -1,3 +1,5 @@
+package snakeGame;
+
 import java.awt.*;
 import java.io.Serializable;
 import java.util.Objects;
@@ -41,5 +43,31 @@ public class EatBlock implements Serializable {
         if (o == null || getClass() != o.getClass()) return false;
         EatBlock eatBlock = (EatBlock) o;
         return Objects.equals(coord, eatBlock.coord);
+    }
+
+    public static class ExceptionSnake extends Exception {
+
+
+        public ExceptionSnake(){
+
+        }
+
+        @Override
+        public String toString() {
+            return "ExceptionSnake{" +
+                    "longSnake=" + SnakeLogicGame.longSnake +
+                    ", countEatBlock=" + SnakeLogicGame.countEatBlock +
+                    ", score=" + SnakeLogicGame.score +
+                    ", bestScoreSession=" + SnakeLogicGame.bestScoreSession +
+                    ", left=" + SnakeLogicGame.left +
+                    ", right=" + SnakeLogicGame.right +
+                    ", up=" + SnakeLogicGame.up +
+                    ", down=" + SnakeLogicGame.down +
+                    ", inGame=" + SnakeLogicGame.inGame +
+                    ", speedGame=" + SnakeLogicGame.speedGame +
+                    ", snake=" + SnakeLogicGame.snake +
+                    ", eatBlockColor=" + SnakeLogicGame.eatBlockColor +
+                    '}';
+        }
     }
 }

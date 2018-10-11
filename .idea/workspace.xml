@@ -1,31 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="86040737-208a-4e06-86fd-eeb2d64d7d37" name="Default Changelist" comment="">
+    <list default="true" id="6ab611c9-dcd7-4672-b616-4ab89dbd0392" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/libs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/JTattoo_1_6_11.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/JTattoo_1_6_11.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/SnakeLogicGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/snakeGame/SnakeLogicGame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/SnakeMain$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/SnakeMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/snakeGame/SnakeMain.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$10.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$11.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$11.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$12.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$12.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$13.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$13.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$14.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$14.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$7.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$8.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$9.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SnakeLogicGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SnakeLogicGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SnakeMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SnakeMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SnakePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SnakePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/snakeGame.iml" beforeDir="false" afterPath="$PROJECT_DIR$/snakeGame.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Coord.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EatBlock.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ExceptionSnake.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FieldKeyListener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/JTattoo-1.6.11.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SnakeLogicGame.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SnakeMain.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SnakePanel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/filterFileSnake.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/snake.png" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
+    <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +43,7 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="14" />
-          <entry key="java" value="17" />
+          <entry key="java" value="37" />
           <entry key="png" value="1" />
           <entry key="txt" value="2" />
         </counts>
@@ -57,7 +52,7 @@
         <counts>
           <entry key="CLASS" value="14" />
           <entry key="Image" value="1" />
-          <entry key="JAVA" value="17" />
+          <entry key="JAVA" value="37" />
           <entry key="PLAIN_TEXT" value="2" />
         </counts>
       </usages-collector>
@@ -109,46 +104,64 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/SnakeMain.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/snakeGame/Coord.java">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret line="17" column="53" selection-start-line="17" selection-start-column="53" selection-end-line="17" selection-end-column="53" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <caret column="8" selection-start-column="8" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/snakeGame/EatBlock.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="10" selection-start-column="10" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/snakeGame/FieldKeyListener.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="15" selection-start-column="15" selection-end-column="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/snakeGame/filterFileSnake.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="10" selection-start-column="10" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/snakeGame/SnakeLogicGame.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="14" selection-start-column="14" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/snakeGame/SnakeMain.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="8" selection-start-column="8" selection-end-column="8" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/SnakePanel.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/snakeGame/SnakePanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="274">
-              <caret line="163" column="66" lean-forward="true" selection-start-line="163" selection-start-column="66" selection-end-line="163" selection-end-column="66" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/SnakeLogicGame.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1078">
-              <caret line="283" column="13" selection-start-line="283" selection-start-column="13" selection-end-line="283" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ExceptionSnake.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="6" selection-start-line="6" selection-end-line="6" />
+            <state relative-caret-position="198">
+              <caret line="19" column="47" lean-forward="true" selection-start-line="19" selection-start-column="47" selection-end-line="19" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -181,8 +194,40 @@
         <option value="$PROJECT_DIR$/src/SnakeMain.java" />
         <option value="$PROJECT_DIR$/src/SnakeLogicGame.java" />
         <option value="$PROJECT_DIR$/src/SnakePanel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/snakeGame/ExceptionSnake.java" />
+        <option value="$PROJECT_DIR$/src/test/java/snakeGame/AppTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/snakeGame/Coord.java" />
+        <option value="$PROJECT_DIR$/src/main/java/snakeGame/EatBlock.java" />
+        <option value="$PROJECT_DIR$/src/main/java/snakeGame/FieldKeyListener.java" />
+        <option value="$PROJECT_DIR$/src/main/java/snakeGame/filterFileSnake.java" />
+        <option value="$PROJECT_DIR$/src/main/java/snakeGame/SnakeLogicGame.java" />
+        <option value="$PROJECT_DIR$/src/main/java/snakeGame/SnakeMain.java" />
+        <option value="$PROJECT_DIR$/src/main/java/snakeGame/SnakePanel.java" />
       </list>
     </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="Snake" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="Snake" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-55" />
@@ -196,7 +241,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -211,17 +255,61 @@
             </path>
             <path>
               <item name="snakeGame" type="b2602c69:ProjectViewProjectNode" />
+              <item name="snakeGame" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="snakeGame" type="b2602c69:ProjectViewProjectNode" />
+              <item name="snakeGame" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="snakeGame" type="b2602c69:ProjectViewProjectNode" />
+              <item name="snakeGame" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="snakeGame" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="snakeGame" type="b2602c69:ProjectViewProjectNode" />
+              <item name="snakeGame" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="snakeGame" type="b2602c69:ProjectViewProjectNode" />
+              <item name="snakeGame" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="snakeGame" type="b2602c69:ProjectViewProjectNode" />
+              <item name="snakeGame" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="snakeGame" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="snakeGame" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539181636548" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539247999732" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
@@ -229,10 +317,15 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="java" />
+      <recent name="main" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Repository\snakeGame\src\snakeGame" />
       <recent name="C:\Repository\snakeGame\src" />
       <recent name="C:\Repository\snakeGame\src\resourse" />
     </key>
@@ -251,7 +344,7 @@
   </component>
   <component name="RunManager">
     <configuration name="SnakeMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="SnakeMain" />
+      <option name="MAIN_CLASS_NAME" value="snakeGame.SnakeMain" />
       <module name="snakeGame" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -287,8 +380,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49291784" visible="true" weight="0.18389262" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49291784" visible="true" weight="0.19194631" />
       <window_info id="Structure" order="1" sideWeight="0.50708216" side_tool="true" visible="true" weight="0.18389262" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -305,7 +399,7 @@
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.3286119" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.3286119" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.32843137" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32719547" />
       <window_info anchor="bottom" id="Extract Method" order="11" weight="0.3286119" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -314,7 +408,7 @@
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
-      <window_info anchor="right" id="Maven Projects" order="7" />
+      <window_info anchor="right" id="Maven Projects" order="7" weight="0.3295302" />
     </layout>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -459,16 +553,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SnakeMain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="17" column="53" selection-start-line="17" selection-start-column="53" selection-end-line="17" selection-end-column="53" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Coord.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -517,6 +601,141 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/snakeGame.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SnakeMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="17" column="53" selection-start-line="17" selection-start-column="53" selection-end-line="17" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/snakeGame/EatBlock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="13" selection-start-column="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/snakeGame/Coord.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="9" lean-forward="true" selection-start-column="9" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/snakeGame/SnakePanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="13" selection-start-column="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/snakeGame/SnakeMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="15" selection-start-column="15" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/snakeGame/SnakeLogicGame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="12" selection-start-column="12" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/snakeGame/filterFileSnake.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="14" lean-forward="true" selection-start-column="14" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/snakeGame/FieldKeyListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="14" lean-forward="true" selection-start-column="14" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/snakeGame/ExceptionSnake.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="14" selection-start-column="14" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/snakeGame/AppTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" column="3" lean-forward="true" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/main/java/snakeGame/ExceptionSnake.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="20" lean-forward="true" selection-start-column="20" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/snakeGame/Coord.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="8" selection-start-column="8" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/snakeGame/EatBlock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="10" selection-start-column="10" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/snakeGame/FieldKeyListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="15" selection-start-column="15" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/snakeGame/filterFileSnake.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="10" selection-start-column="10" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/snakeGame/SnakeLogicGame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="14" selection-start-column="14" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/snakeGame/SnakeMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="8" selection-start-column="8" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/snakeGame/SnakePanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="19" column="47" lean-forward="true" selection-start-line="19" selection-start-column="47" selection-end-line="19" selection-end-column="47" />
         </state>
       </provider>
     </entry>

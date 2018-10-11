@@ -1,3 +1,7 @@
+package snakeGame;
+
+import snakeGame.Coord;
+
 import java.awt.*;
 import java.io.IOException;
 import java.io.ObjectInputStream;

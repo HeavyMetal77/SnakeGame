@@ -1,4 +1,7 @@
+package snakeGame;
+
 import com.jtattoo.plaf.smart.SmartLookAndFeel;
+
 import javax.swing.*;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
