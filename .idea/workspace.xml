@@ -1,31 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="86040737-208a-4e06-86fd-eeb2d64d7d37" name="Default Changelist" comment="">
+    <list default="true" id="6ab611c9-dcd7-4672-b616-4ab89dbd0392" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/libs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/JTattoo_1_6_11.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/JTattoo_1_6_11.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/SnakeLogicGame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/snakeGame/SnakeLogicGame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/SnakeMain$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/SnakeMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/snakeGame/SnakeMain.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$10.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$11.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$11.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$12.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$12.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$13.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$13.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$14.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$14.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$7.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$8.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$9.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SnakeLogicGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SnakeLogicGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SnakeMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SnakeMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SnakePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SnakePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/Coord.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/EatBlock.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/ExceptionSnake.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/FieldKeyListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/JTattoo-1.6.11.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/SnakeLogicGame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/SnakeMain.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$10.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$11.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$12.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$13.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$14.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$15.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$6.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$7.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$8.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$9.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/filterFileSnake.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/snake.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/snakeGame.iml" beforeDir="false" afterPath="$PROJECT_DIR$/snakeGame.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Coord.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EatBlock.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ExceptionSnake.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FieldKeyListener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/JTattoo-1.6.11.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SnakeLogicGame.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SnakeMain.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SnakePanel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/filterFileSnake.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/snake.png" beforeDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/out/" />
+    <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,75 +52,39 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FUSProjectUsageTrigger">
-    <session id="433165061">
+    <session id="-1138191897">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="14" />
-          <entry key="project.open.time.0" value="3" />
-          <entry key="project.open.time.1" value="4" />
-          <entry key="project.open.time.6" value="1" />
-          <entry key="project.open.time.7" value="4" />
-          <entry key="project.open.time.8" value="4" />
-          <entry key="project.opened" value="16" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="class" value="14" />
-          <entry key="java" value="17" />
-          <entry key="png" value="1" />
-          <entry key="txt" value="2" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="CLASS" value="14" />
-          <entry key="Image" value="1" />
-          <entry key="JAVA" value="17" />
-          <entry key="PLAIN_TEXT" value="2" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="dummy" value="5" />
-          <entry key="java" value="6162" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="JAVA" value="6162" />
-          <entry key="PLAIN_TEXT" value="5" />
-        </counts>
-      </usages-collector>
-    </session>
-    <session id="157386577">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="1" />
-          <entry key="project.open.time.10" value="1" />
+          <entry key="project.open.time.2" value="1" />
           <entry key="project.opened" value="1" />
         </counts>
       </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="java" value="1052" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="JAVA" value="1052" />
-        </counts>
-      </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="class" value="2" />
-          <entry key="java" value="5" />
+          <entry key="java" value="8" />
+          <entry key="xml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CLASS" value="2" />
-          <entry key="JAVA" value="5" />
+          <entry key="JAVA" value="8" />
+          <entry key="XML" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
+    <session id="433165061">
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="iml" value="2" />
+          <entry key="java" value="2" />
+          <entry key="xml" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="IDEA_MODULE" value="2" />
+          <entry key="JAVA" value="2" />
+          <entry key="XML" value="1" />
         </counts>
       </usages-collector>
     </session>
@@ -109,22 +92,28 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/SnakeMain.java">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="17" column="53" selection-start-line="17" selection-start-column="53" selection-end-line="17" selection-end-column="53" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="198">
+              <caret line="9" selection-start-line="9" selection-end-line="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Main/java/snakeGame/ExceptionSnake.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="44">
+              <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/SnakePanel.java">
+        <entry file="file://$PROJECT_DIR$/src/Main/java/snakeGame/SnakeMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="274">
-              <caret line="163" column="66" lean-forward="true" selection-start-line="163" selection-start-column="66" selection-end-line="163" selection-end-column="66" />
+            <state relative-caret-position="198">
+              <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -133,34 +122,11 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/SnakeLogicGame.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1078">
-              <caret line="283" column="13" selection-start-line="283" selection-start-column="13" selection-end-line="283" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ExceptionSnake.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="6" selection-start-line="6" selection-end-line="6" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/snakeGame.iml">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -168,21 +134,32 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/SnakeFrame.java" />
-        <option value="$PROJECT_DIR$/src/KeyListeners.java" />
-        <option value="$PROJECT_DIR$/src/eatBlock.java" />
-        <option value="$PROJECT_DIR$/src/MenuListeners.java" />
-        <option value="$PROJECT_DIR$/src/saveGame.java" />
-        <option value="$PROJECT_DIR$/src/Coord.java" />
-        <option value="$PROJECT_DIR$/src/EatBlock.java" />
-        <option value="$PROJECT_DIR$/src/filterFileSnake.java" />
-        <option value="$PROJECT_DIR$/src/FieldKeyListener.java" />
-        <option value="$PROJECT_DIR$/src/ExceptionSnake.java" />
-        <option value="$PROJECT_DIR$/src/SnakeMain.java" />
-        <option value="$PROJECT_DIR$/src/SnakeLogicGame.java" />
-        <option value="$PROJECT_DIR$/src/SnakePanel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/snakeGame/Coord.java" />
+        <option value="$PROJECT_DIR$/src/main/java/snakeGame/SnakeLogicGame.java" />
+        <option value="$PROJECT_DIR$/src/main/java/snakeGame/EatBlock.java" />
+        <option value="$PROJECT_DIR$/src/main/java/snakeGame/FieldKeyListener.java" />
+        <option value="$PROJECT_DIR$/src/main/java/snakeGame/SnakePanel.java" />
+        <option value="$PROJECT_DIR$/src/main/java/snakeGame/filterFileSnake.java" />
+        <option value="$PROJECT_DIR$/src/main/java/snakeGame/SnakeMain.java" />
+        <option value="$PROJECT_DIR$/src/main/java/snakeGame/ExceptionSnake.java" />
       </list>
     </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="Snake" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="Snake" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-55" />
@@ -196,7 +173,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -211,31 +188,47 @@
             </path>
             <path>
               <item name="snakeGame" type="b2602c69:ProjectViewProjectNode" />
+              <item name="snakeGame" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="libs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="snakeGame" type="b2602c69:ProjectViewProjectNode" />
+              <item name="snakeGame" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="snakeGame" type="b2602c69:ProjectViewProjectNode" />
+              <item name="snakeGame" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="snakeGame" type="b2602c69:ProjectViewProjectNode" />
+              <item name="snakeGame" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="snakeGame" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="snakeGame" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539181636548" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539246277263" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Repository\snakeGame\src" />
-      <recent name="C:\Repository\snakeGame\src\resourse" />
-    </key>
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -250,63 +243,80 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="SnakeMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="SnakeMain" />
+    <configuration name="SnakeMain" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="snakeGame.SnakeMain" />
       <module name="snakeGame" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="snakeGame.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.SnakeMain" />
-      </list>
-    </recent_temporary>
+    <configuration default="true" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list />
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="86040737-208a-4e06-86fd-eeb2d64d7d37" name="Default Changelist" comment="" />
-      <created>1537001302150</created>
+      <changelist id="6ab611c9-dcd7-4672-b616-4ab89dbd0392" name="Default Changelist" comment="" />
+      <created>1539240531235</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1537001302150</updated>
+      <updated>1539240531235</updated>
     </task>
     <servers />
   </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-  </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49291784" visible="true" weight="0.18389262" />
-      <window_info id="Structure" order="1" sideWeight="0.50708216" side_tool="true" visible="true" weight="0.18389262" />
-      <window_info id="Image Layers" order="2" />
-      <window_info id="Designer" order="3" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Capture Tool" order="5" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6940928" visible="true" weight="0.18926175" />
+      <window_info id="Structure" order="1" sideWeight="0.30590716" side_tool="true" weight="0.18926175" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Designer" order="4" />
+      <window_info id="UI Designer" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32719547" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3286119" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.3286119" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.3286119" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.3286119" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.32843137" />
-      <window_info anchor="bottom" id="Extract Method" order="11" weight="0.3286119" />
+      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.3286119" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -314,206 +324,91 @@
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
-      <window_info anchor="right" id="Maven Projects" order="7" />
+      <window_info anchor="right" id="Maven Projects" order="7" weight="0.3295302" />
     </layout>
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
-              <option name="COLUMN_ORDER">
-                <list>
-                  <option value="0" />
-                  <option value="1" />
-                  <option value="2" />
-                  <option value="3" />
-                </list>
-              </option>
-            </State>
-          </value>
-        </entry>
-      </map>
-    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../testTest/src/com/company/Main.java" />
-    <entry file="file://$PROJECT_DIR$/../set/src/SetCollection.java" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/jre/lib/rt.jar!/java/awt/Component.class">
+    <entry file="file://$PROJECT_DIR$/src/Main/java/snakeGame/SnakePanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-478">
-          <caret line="2838" column="14" lean-forward="true" selection-start-line="2838" selection-start-column="14" selection-end-line="2838" selection-end-column="14" />
+        <state relative-caret-position="154">
+          <caret line="7" column="40" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/jre/lib/rt.jar!/java/awt/Color.class">
+    <entry file="file://$PROJECT_DIR$/src/Main/java/snakeGame/filterFileSnake.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="34" column="30" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/jre/lib/rt.jar!/javax/swing/AbstractButton.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="411" column="16" selection-start-line="411" selection-start-column="16" selection-end-line="411" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MenuListeners.java" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/jre/lib/rt.jar!/javax/swing/JComponent.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="552" selection-start-line="552" selection-end-line="552" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/src/JTattoo-1.6.11.jar!/com/jtattoo/plaf/JTattooUtilities.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="71" selection-start-line="71" selection-end-line="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/src/JTattoo-1.6.11.jar!/com/jtattoo/plaf/BaseRootPaneUI.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="182" selection-start-line="182" selection-end-line="182" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/src/JTattoo-1.6.11.jar!/com/jtattoo/plaf/DecorationHelper.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="43" selection-start-line="43" selection-end-line="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/src/JTattoo-1.6.11.jar!/com/jtattoo/plaf/BaseTitlePane.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="685" selection-start-line="685" selection-end-line="685" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/_tc/Quaqua/src/test/RadioButtonTest.java" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/jre/lib/rt.jar!/java/io/ObjectStreamClass.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="681" column="9" lean-forward="true" selection-start-line="681" selection-start-column="9" selection-end-line="681" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/saveGame.java" />
-    <entry file="file://$PROJECT_DIR$/src/save1.txt" />
-    <entry file="file://$PROJECT_DIR$/src/snake.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/jre/lib/rt.jar!/javax/swing/filechooser/FileNameExtensionFilter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-50">
-          <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/jre/lib/rt.jar!/java/io/File.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="462" column="19" selection-start-line="462" selection-start-column="19" selection-end-line="462" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/filterFileSnake.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#464#465#0" expanded="true" />
-            <element signature="e#500#501#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/jre/lib/rt.jar!/java/lang/Exception.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/jre/lib/rt.jar!/javax/swing/Timer.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="71" selection-start-line="71" selection-end-line="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SnakeMain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="17" column="53" selection-start-line="17" selection-start-column="53" selection-end-line="17" selection-end-column="53" />
+        <state relative-caret-position="110">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Coord.java">
+    <entry file="file://$PROJECT_DIR$/src/Main/java/snakeGame/FieldKeyListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" column="30" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
+        <state relative-caret-position="110">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/EatBlock.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="10" column="27" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ExceptionSnake.java">
+    <entry file="file://$PROJECT_DIR$/src/Main/java/snakeGame/EatBlock.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/FieldKeyListener.java">
+    <entry file="file://$PROJECT_DIR$/src/Main/java/snakeGame/Coord.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main/java/snakeGame/SnakeLogicGame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="25" column="29" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Snake.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/snakeGame.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main/java/snakeGame/ExceptionSnake.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="44">
-          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SnakeLogicGame.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1078">
-          <caret line="283" column="13" selection-start-line="283" selection-start-column="13" selection-end-line="283" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="198">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SnakePanel.java">
+    <entry file="file://$PROJECT_DIR$/src/Main/java/snakeGame/SnakeMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="163" column="66" lean-forward="true" selection-start-line="163" selection-start-column="66" selection-end-line="163" selection-end-column="66" />
+        <state relative-caret-position="198">
+          <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -578,6 +473,18 @@
               <list>
                 <option value="0.2" />
                 <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
               </list>
             </option>
           </splitter-proportions>
