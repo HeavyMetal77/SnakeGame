@@ -2,47 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6ab611c9-dcd7-4672-b616-4ab89dbd0392" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/libs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/JTattoo_1_6_11.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/JTattoo_1_6_11.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/Coord.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/EatBlock.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/ExceptionSnake.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/FieldKeyListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/JTattoo-1.6.11.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/SnakeLogicGame.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/SnakeMain.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$10.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$11.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$12.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$13.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$14.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$15.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$6.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$7.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$8.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel$9.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/SnakePanel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/filterFileSnake.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/snakeGame/snake.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/snakeGame.iml" beforeDir="false" afterPath="$PROJECT_DIR$/snakeGame.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Coord.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EatBlock.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ExceptionSnake.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FieldKeyListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JTattoo-1.6.11.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SnakeLogicGame.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SnakeMain.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SnakePanel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/filterFileSnake.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/snake.png" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -87,6 +47,11 @@
           <entry key="XML" value="1" />
         </counts>
       </usages-collector>
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+        </counts>
+      </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
@@ -112,11 +77,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Main/java/snakeGame/SnakeMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="110">
+              <caret line="5" column="44" selection-start-line="5" selection-start-column="44" selection-end-line="5" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -225,7 +187,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539246277263" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539246521075" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -296,8 +258,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
-    <editor active="true" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6940928" visible="true" weight="0.18926175" />
       <window_info id="Structure" order="1" sideWeight="0.30590716" side_tool="true" weight="0.18926175" />
@@ -308,12 +269,12 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3286119" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3286119" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.3286119" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.3286119" />
@@ -407,11 +368,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main/java/snakeGame/SnakeMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="110">
+          <caret line="5" column="44" selection-start-line="5" selection-start-column="44" selection-end-line="5" selection-end-column="44" />
         </state>
       </provider>
     </entry>
