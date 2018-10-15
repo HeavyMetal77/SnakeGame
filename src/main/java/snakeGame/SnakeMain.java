@@ -26,7 +26,4 @@ public class SnakeMain {
             e.printStackTrace();
         }
     }
-
-    public SnakeMain() {
-    }
 }

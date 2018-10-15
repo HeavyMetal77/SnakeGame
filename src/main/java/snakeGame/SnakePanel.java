@@ -42,7 +42,7 @@ public class SnakePanel extends JPanel implements ActionListener, Runnable {
     public SnakePanel() throws HeadlessException {
         frame = new JFrame();
         frame.setTitle("Snake");
-        frame.setIconImage(new ImageIcon("C:\\Repository\\java.snakeGame\\src\\snake.png").getImage());
+        frame.setIconImage(new ImageIcon("C:\\Repository\\snakeGame\\src\\main\\resourses\\snake.png").getImage());
         setMinimumSize(new Dimension(WIDTH, WIDTH));
         setPreferredSize(new Dimension(WIDTH, WIDTH));
         setMaximumSize(new Dimension(WIDTH, WIDTH));
@@ -130,13 +130,12 @@ public class SnakePanel extends JPanel implements ActionListener, Runnable {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 panelConfig.setVisible(false);
-                labelStatus.setText("Welcome! Score: " + SnakeLogicGame.score + ". Best result: " + SnakeLogicGame.bestScoreSession);
+                labelStatus.setText("Welcome! Score: " + SnakeLogicGame.score + "" +
+                        ". Best result: " + SnakeLogicGame.bestScoreSession);
                 if(SnakeLogicGame.inGame){
                     SnakeLogicGame.speedGameLevel(slider.getValue());
-                    SnakeLogicGame.initStartValue();
                     repaint();
                     timer.setDelay(SnakeLogicGame.speedGame);
-                    timer.restart();
                 }else {
                     timer.stop();
                 }
@@ -150,7 +149,6 @@ public class SnakePanel extends JPanel implements ActionListener, Runnable {
             public void actionPerformed(ActionEvent actionEvent) {
                 if(SnakeLogicGame.inGame){
                     timer.setDelay(SnakeLogicGame.speedGame);
-                    timer.restart();
                 }else {
                     timer.stop();
                 }
@@ -236,14 +234,14 @@ public class SnakePanel extends JPanel implements ActionListener, Runnable {
 
     private void initLabel(){
         SnakeLogicGame.score = 0;
-        labelStatus = new JLabel("Welcome! Score: " + SnakeLogicGame.score + ". Best result: " + SnakeLogicGame.bestScoreSession);
+        labelStatus = new JLabel("Welcome! Score: " + SnakeLogicGame.score + "" +
+                ". Best result: " + SnakeLogicGame.bestScoreSession);
         frame.add(labelStatus, BorderLayout.SOUTH);
     }
 
     @Override
     protected void paintComponent(Graphics graphics) {
         super.paintComponent(graphics);
-
         for (int i = 0; i < SnakeLogicGame.snake.size(); i++) {
             graphics.setColor(colorSnake);
             graphics.fillRect(SnakeLogicGame.snake.get(i).CoordX, SnakeLogicGame.snake.get(i).CoordY, SnakeLogicGame.sizeBlock, SnakeLogicGame.sizeBlock);

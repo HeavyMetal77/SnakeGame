@@ -1,7 +1,5 @@
 package snakeGame;
 
-import snakeGame.Coord;
-
 import java.awt.*;
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -13,7 +11,7 @@ import java.util.Random;
 public class SnakeLogicGame implements Serializable, Runnable {
     protected static int sizeBlock = 10;
     protected static int longSnake = 4;
-    protected static int countEatBlock = 1500;
+    protected static int countEatBlock = 10;
     protected static int score;
     protected static int bestScoreSession = 0;
     protected static boolean left = false;
@@ -243,20 +241,22 @@ public class SnakeLogicGame implements Serializable, Runnable {
             if (bestScoreSession < score) {
                 bestScoreSession = score;
             }
-            SnakePanel.labelStatus.setText("Game Over! Your scores: " + score + ". Best result: " + bestScoreSession);
+            SnakePanel.labelStatus.setText("Game Over! Your scores: " + score + "" +
+                    ". Best result: " + bestScoreSession);
             System.out.println("Game Over");
         }
     }
 
     protected static void coincidence() {
         for (int i = 4; i < snake.size(); i++) {
-            if (snake.size() > 4 && snake.get(0).equals(snake.get(i))) {
+            if (snake.get(0).equals(snake.get(i))) {
                 SnakePanel.timer.stop();
                 inGame = false;
                 if (bestScoreSession < score) {
                     bestScoreSession = score;
                 }
-                SnakePanel.labelStatus.setText("Game Over! Your scores: " + score + ". Best result: " + bestScoreSession);
+                SnakePanel.labelStatus.setText("Game Over! Your scores: " + score + "" +
+                        ". Best result: " + bestScoreSession);
                 System.out.println("Game Over!");
             }
         }
@@ -265,26 +265,42 @@ public class SnakeLogicGame implements Serializable, Runnable {
                 if (snake.get(0).equals(eatBlockColor.get(i).coord)) {
                     Coord coord = eatBlockColor.get(i).getCoord();
                     snake.add(coord);
-                    SnakePanel.labelStatus.setText("Your scores: " + (++score) + ". Best result: " + bestScoreSession);
+                    SnakePanel.labelStatus.setText("Your scores: " + (++score) + "" +
+                            ". Best result: " + bestScoreSession);
                     eatBlockColor.remove(i);
-                    Color temp = colorSnakeBlock();
-                    int randomEatBlockX = new Random().nextInt(SnakePanel.WIDTH / sizeBlock);
-                    int randomEatBlockY = new Random().nextInt(SnakePanel.WIDTH / sizeBlock);
-                    Coord newCoord = new Coord(randomEatBlockX * sizeBlock, randomEatBlockY * sizeBlock);
+                    while (eatBlockColor.size()<countEatBlock) {
+                        Color temp = colorSnakeBlock();
+                        int randomEatBlockX = new Random().nextInt(SnakePanel.WIDTH / sizeBlock+1);
+                        int randomEatBlockY = new Random().nextInt(SnakePanel.WIDTH / sizeBlock+1);
+                        Coord newCoord = new Coord(randomEatBlockX * sizeBlock, randomEatBlockY * sizeBlock);
 
-                    Boolean flag = false;
-                    for (Coord coordTemp : snake) {
-                        if (newCoord.equals(coordTemp)) {
-                            flag = true;
-                            i--;
+                        Boolean flag = false;
+                        for (Coord coordTemp : snake) {
+                            if (newCoord.equals(coordTemp)) {
+                                flag = true;
+                                i--;
+                            }
                         }
-                    }
-                    if (!flag) {
-                        eatBlockColor.add(i, new EatBlock(temp, newCoord));
+                        if (!flag) {
+                            eatBlockColor.add(i, new EatBlock(temp, newCoord));
+                        }
                     }
                 }
             }catch (Exception e){
                 e.toString();
+                System.out.println("ExceptionSnake{" +
+                        "longSnake=" + SnakeLogicGame.longSnake +
+                        ", countEatBlock=" + SnakeLogicGame.countEatBlock +
+                        ", score=" + SnakeLogicGame.score +
+                        ", bestScoreSession=" + SnakeLogicGame.bestScoreSession +
+                        ", left=" + SnakeLogicGame.left +
+                        ", right=" + SnakeLogicGame.right +
+                        ", up=" + SnakeLogicGame.up +
+                        ", down=" + SnakeLogicGame.down +
+                        ", inGame=" + SnakeLogicGame.inGame +
+                        ", speedGame=" + SnakeLogicGame.speedGame +
+                        ", snake=" + SnakeLogicGame.snake +
+                        ", eatBlockColor=" + SnakeLogicGame.eatBlockColor +'}');
             }
         }
     }
