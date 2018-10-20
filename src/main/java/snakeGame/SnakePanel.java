@@ -2,14 +2,15 @@ package snakeGame;
 
 import com.jtattoo.plaf.aluminium.AluminiumLookAndFeel;
 import com.jtattoo.plaf.mint.MintLookAndFeel;
+import media.SoundSnake;
+import util.filterFileMusicSnake;
+import util.filterFileSnake;
 
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
+import java.awt.event.*;
 import java.io.*;
 
 public class SnakePanel extends JPanel implements ActionListener, Runnable {
@@ -23,6 +24,9 @@ public class SnakePanel extends JPanel implements ActionListener, Runnable {
     protected JFrame panelConfig;
     protected JFrame panelTableResult = new JFrame("Table of Winners");
     public File file = new File("");
+    public static JRadioButton radioButtonSoundMusic = new JRadioButton("Програвати музику");
+    public static JRadioButton radioButtonSoundGame = new JRadioButton("Звук гри");
+    public static Thread threadPlayMuz;
 
     JMenu menuGame;
     JMenu menuSettings;
@@ -67,40 +71,57 @@ public class SnakePanel extends JPanel implements ActionListener, Runnable {
         timer.start();
         setFocusable(true);
         requestFocus();
+        radioButtonSoundGame.setSelected(true);
+        radioButtonSoundMusic.setSelected(false);
     }
 
     protected void initPanelConfig(){
         timer.stop();
         panelConfig = new JFrame("Game configuration");
-        panelConfig.setMinimumSize(new Dimension(WIDTH/2,210));
+        panelConfig.setMinimumSize(new Dimension(WIDTH/2,300));
         panelConfig.setLocationRelativeTo(null);
         panelConfig.setVisible(true);
         panelConfig.setResizable(false);
         panelConfig.setLayout(new FlowLayout());
-        JPanel subPanelConfig1 = new JPanel();
-        JPanel subPanelConfig2 = new JPanel();
-        JPanel subPanelConfig3 = new JPanel();
-        JPanel subPanelConfig4 = new JPanel();
+        JPanel subPanelConfigSpeedGame = new JPanel();
+        JPanel subPanelConfigColor = new JPanel();
+        JPanel subPanelConfigTableWin = new JPanel();
+        JPanel subPanelConfigSound = new JPanel();
+        JPanel subPanelConfigBattonOkCh = new JPanel();
 
-        subPanelConfig1.setPreferredSize(new Dimension(WIDTH/2, 50));
-        subPanelConfig2.setPreferredSize(new Dimension(WIDTH/2, 30));
-        subPanelConfig3.setPreferredSize(new Dimension(WIDTH/2, 30));
-        subPanelConfig4.setPreferredSize(new Dimension(WIDTH/2, 50));
+        subPanelConfigSpeedGame.setPreferredSize(new Dimension(WIDTH/2, 50));
+        subPanelConfigColor.setPreferredSize(new Dimension(WIDTH/2, 30));
+        subPanelConfigTableWin.setPreferredSize(new Dimension(WIDTH/2, 30));
+        subPanelConfigSound.setPreferredSize(new Dimension(WIDTH/2, 80));
+        subPanelConfigBattonOkCh.setPreferredSize(new Dimension(WIDTH/2, 50));
 
-        final JButton buttonColorChooser = new JButton("Select color");
-        buttonColorChooser.setBackground(colorPanel);
-        buttonColorChooser.addActionListener(new ActionListener() {
+        final JButton buttonColorChooserPanel = new JButton("Select color");
+        buttonColorChooserPanel.setBackground(colorPanel);
+        buttonColorChooserPanel.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 JColorChooser colorChooser = new JColorChooser();
-                Color color = colorChooser.showDialog(null, "Select a color", colorPanel);
-                buttonColorChooser.setBackground(color);
+                Color color = colorChooser.showDialog(null, "Виберіть колір ігрової панелі", colorPanel);
+                buttonColorChooserPanel.setBackground(color);
                 colorPanel = color;
                 setBackground(colorPanel);
             }
         });
 
-        subPanelConfig2.add(buttonColorChooser);
+        final JButton buttonColorChooserSnake = new JButton("Select color");
+        buttonColorChooserSnake.setBackground(colorSnake);
+        buttonColorChooserSnake.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                JColorChooser colorChooser = new JColorChooser();
+                Color color = colorChooser.showDialog(null, "Виберіть колір змійки", colorSnake);
+                buttonColorChooserSnake.setBackground(color);
+                colorSnake = color;
+            }
+        });
+
+        subPanelConfigColor.add(buttonColorChooserPanel);
+        subPanelConfigColor.add(buttonColorChooserSnake);
 
         final JLabel labelSlider = new JLabel();
         labelSlider.setPreferredSize(new Dimension(100, 20));
@@ -120,8 +141,8 @@ public class SnakePanel extends JPanel implements ActionListener, Runnable {
             }
         });
 
-        subPanelConfig1.add(labelSlider);
-        subPanelConfig1.add(slider);
+        subPanelConfigSpeedGame.add(labelSlider);
+        subPanelConfigSpeedGame.add(slider);
         slider.setOrientation(SwingConstants.HORIZONTAL);
 
         JButton buttonOK = new JButton("OK");
@@ -165,14 +186,65 @@ public class SnakePanel extends JPanel implements ActionListener, Runnable {
                 panelTableResult.setVisible(true);
             }
         });
-        subPanelConfig3.add(buttonResultTable);
-        subPanelConfig4.add(buttonOK);
-        subPanelConfig4.add(buttonCancel);
+        subPanelConfigTableWin.add(buttonResultTable);
 
-        panelConfig.add(subPanelConfig1);
-        panelConfig.add(subPanelConfig2);
-        panelConfig.add(subPanelConfig3);
-        panelConfig.add(subPanelConfig4);
+        radioButtonSoundMusic.setMnemonic(KeyEvent.VK_M);
+        radioButtonSoundGame.setMnemonic(KeyEvent.VK_G);
+        ButtonGroup buttonGroup = new ButtonGroup();
+        buttonGroup.add(radioButtonSoundMusic);
+        buttonGroup.add(radioButtonSoundGame);
+
+        JButton buttonChooserMusic = new JButton("Вибір музичного файла");
+        buttonChooserMusic.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                JFileChooser fileChooser = new JFileChooser();
+                fileChooser.setCurrentDirectory(new File("D:\\"));
+                fileChooser.setFileFilter(new filterFileMusicSnake());
+                int ret = fileChooser.showDialog(frame, "Open file");
+                if (ret == JFileChooser.APPROVE_OPTION) {
+                    file = fileChooser.getSelectedFile();
+                    if(!fileChooser.getSelectedFile().getName().endsWith("mp3")){
+                        JOptionPane.showMessageDialog(frame,
+                                new String[] {"Ви вибрали неправильний файл: ",
+                                        " - спробуйте знайти файл mp3"},
+                                "Wrong type file",
+                                JOptionPane.ERROR_MESSAGE);
+
+                    } else {
+                        SoundSnake.path = file.toPath().toString();
+                        radioButtonSoundMusic.setSelected(true);
+                            SoundSnake.onSound();
+                            threadPlayMuz = new Thread(new SoundSnake());
+                            threadPlayMuz.start();
+                    }
+                }
+            }
+        });
+
+        radioButtonSoundMusic.addItemListener(new ItemListener() {
+            @Override
+            public void itemStateChanged(ItemEvent itemEvent) {
+                if(!radioButtonSoundMusic.isSelected()){
+                    threadPlayMuz.interrupt();
+                    SoundSnake.muteSound();
+                    SoundSnake.playMP3.close();
+                }
+            }
+        });
+
+        subPanelConfigSound.add(radioButtonSoundGame);
+        subPanelConfigSound.add(radioButtonSoundMusic);
+        subPanelConfigSound.add(buttonChooserMusic);
+
+        subPanelConfigBattonOkCh.add(buttonOK);
+        subPanelConfigBattonOkCh.add(buttonCancel);
+
+        panelConfig.add(subPanelConfigSpeedGame);
+        panelConfig.add(subPanelConfigColor);
+        panelConfig.add(subPanelConfigSound);
+        panelConfig.add(subPanelConfigTableWin);
+        panelConfig.add(subPanelConfigBattonOkCh);
     }
 
     protected void initMenu(){
@@ -186,6 +258,7 @@ public class SnakePanel extends JPanel implements ActionListener, Runnable {
         menuItemResumeGame = new JMenuItem("Resume");
         menuItemExitGame = new JMenuItem("Exit");
         menuItemConfigStartGame = new JMenuItem("ConfigStartGame");
+
         menuItemSkin = new JMenu("Skin");
         menuItemSkin1 = new JMenuItem("Skin1");
         menuItemSkin2 = new JMenuItem("Skin2");
@@ -301,7 +374,6 @@ public class SnakePanel extends JPanel implements ActionListener, Runnable {
                                         " - або створіть його через меню збереження гри"},
                                 "Wrong type file",
                                 JOptionPane.ERROR_MESSAGE);
-
                     } else {
                         try (ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream(file))){
                             SnakeLogicGame.deserializedProgressGame(objectInputStream);

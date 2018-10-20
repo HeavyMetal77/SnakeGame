@@ -15,11 +15,11 @@ public class SnakeMain {
         } catch (UnsupportedLookAndFeelException e) {
             e.printStackTrace();
         }
-
-        ExecutorService executorService = Executors.newFixedThreadPool(8);
+        ExecutorService executorService = Executors.newFixedThreadPool(4);
         executorService.submit(new SnakePanel());
         executorService.submit(new SnakeLogicGame());
         executorService.shutdown();
+
         try {
             executorService.awaitTermination(1, TimeUnit.DAYS);
         } catch (InterruptedException e) {

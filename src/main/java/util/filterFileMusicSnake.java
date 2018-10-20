@@ -3,7 +3,7 @@ package util;
 import javax.swing.filechooser.FileFilter;
 import java.io.File;
 
-public class filterFileSnake extends FileFilter {
+public class filterFileMusicSnake extends FileFilter {
 
     @Override
     public boolean accept(File pathname) {
@@ -11,7 +11,7 @@ public class filterFileSnake extends FileFilter {
         if (pathname.isDirectory()) {
             return true;
 
-        } else if (filename.endsWith("snk")) {
+        } else if (filename.endsWith("mp3")) {
             return true;
         } else {
             return false;
@@ -20,6 +20,6 @@ public class filterFileSnake extends FileFilter {
 
     @Override
     public String getDescription() {
-        return "Snake saves";
+        return "mp3";
     }
 }

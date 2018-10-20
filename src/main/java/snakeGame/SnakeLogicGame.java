@@ -1,5 +1,7 @@
 package snakeGame;
 
+import media.SoundSnake;
+
 import java.awt.*;
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -18,10 +20,11 @@ public class SnakeLogicGame implements Serializable, Runnable {
     protected static boolean right = true;
     protected static boolean up = false;
     protected static boolean down = false;
-    protected static boolean inGame = true;
+    public static boolean inGame = true;
     protected static int speedGame = 150;
     protected static ArrayList<Coord> snake = new ArrayList<>();
     protected static ArrayList<EatBlock> eatBlockColor = new ArrayList<>();
+    protected static SoundSnake soundSnake = new SoundSnake();
 
     public SnakeLogicGame() {
         initSnake();
@@ -268,6 +271,10 @@ public class SnakeLogicGame implements Serializable, Runnable {
                     SnakePanel.labelStatus.setText("Your scores: " + (++score) + "" +
                             ". Best result: " + bestScoreSession);
                     eatBlockColor.remove(i);
+                    if(SnakePanel.radioButtonSoundGame.isSelected()){
+                        new Thread(new SoundSnake()).start();
+                    }
+
                     while (eatBlockColor.size()<countEatBlock) {
                         Color temp = colorSnakeBlock();
                         int randomEatBlockX = new Random().nextInt(SnakePanel.WIDTH / sizeBlock+1);

@@ -8,13 +8,13 @@ public class Coord implements Serializable {
     public Coord coord;
 
     public Coord(Coord coord) {
-        CoordX = coord.CoordX;
-        CoordY = coord.CoordY;
+            CoordX = coord.CoordX;
+            CoordY = coord.CoordY;
     }
 
     public Coord(int coordX, int coordY) {
-        CoordX = coordX;
-        CoordY = coordY;
+            CoordX = coordX;
+            CoordY = coordY;
     }
 
     public int getCoordX() {
